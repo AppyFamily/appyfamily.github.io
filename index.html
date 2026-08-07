@@ -283,10 +283,32 @@
   }
 
   @media (max-width:600px){
-    .wrap{ padding:0 20px; }
-    .nav{ padding:14px 20px; }
-    .hero{ padding:56px 0 20px; }
+  .wrap{
+    padding:0 20px;
   }
+
+  .nav{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:14px;
+    padding:14px 20px;
+  }
+
+  .brand{
+    width:100%;
+    justify-content:center;
+  }
+
+  .social-row{
+    justify-content:center;
+    flex-wrap:wrap;
+  }
+
+  .hero{
+    padding:56px 0 20px;
+  }
+}
 
   /* focus visibility */
   a:focus-visible, .btn:focus-visible{ outline:3px solid var(--coral); outline-offset:3px; }
