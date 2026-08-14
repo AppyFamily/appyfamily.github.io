@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Appy Family — A growing family of apps</title>
-<meta name="description" content="Appy Family builds small, useful apps — starting with Nozey, an interactive UK crime map.">
+<meta name="description" content="Appy Family builds practical apps, digital products and AI-powered tools designed to solve real everyday problems.">
 
 <link rel="icon" href="assets/appy-family-logo.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -32,7 +32,7 @@
 
   *{ box-sizing:border-box; }
   html{ scroll-behavior:smooth; }
-  body{ <!-- TEST 12345 -->
+  body{ 
     margin:0;
     background:var(--cream);
     color:var(--ink);
@@ -164,6 +164,16 @@
     font-family:'Baloo 2', sans-serif; font-weight:700; font-size:22px; color:#fff;
     background:var(--blue); margin-bottom:16px;
   }
+
+  .app-logo {
+  width: 90px;
+  height: 90px;
+  border-radius: 14px;
+  object-fit: cover;
+  display: block;
+  margin-bottom: 16px;
+}
+
   .card h3{ font-size:22px; }
   .tagline{ color:var(--ink-soft); font-size:14.5px; line-height:1.55; margin-top:8px; flex-grow:1; }
   .status-pill{
@@ -227,6 +237,63 @@
   .about-inner{ max-width:680px; }
   .about h2{ font-size:clamp(28px,4vw,38px); }
   .about p{ color:var(--ink-soft); font-size:16.5px; line-height:1.7; margin-top:16px; }
+
+  /* ---------- AI Vision ---------- */
+.ai-vision {
+  background: var(--blue-deep);
+  padding: 110px 0;
+  overflow: hidden;
+}
+
+.ai-vision-inner {
+  max-width: 900px;
+}
+
+.ai-vision-eyebrow {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--amber);
+  margin: 0 0 20px;
+}
+
+.ai-vision h2 {
+  color: #fff;
+  font-size: clamp(46px, 7vw, 82px);
+  line-height: 0.98;
+  letter-spacing: -0.03em;
+}
+
+.ai-vision h2 span {
+  color: var(--coral);
+}
+
+.ai-vision-lead {
+  color: #fff;
+  font-size: 24px;
+  font-weight: 700;
+  margin: 30px 0 0;
+}
+
+.ai-vision-copy {
+  color: #B9C4E0;
+  font-size: 18px;
+  line-height: 1.7;
+  max-width: 720px;
+  margin: 20px 0 0;
+}
+
+.ai-vision-action {
+  color: #fff;
+  font-size: 18px;
+  margin: 34px 0 0;
+}
+
+.ai-vision-action strong {
+  color: var(--amber);
+}
 
   /* ---------- Contact ---------- */
   .contact{ padding:96px 0; }
@@ -536,7 +603,7 @@
   margin:0;
   line-height:1.7;
   color:#374151;
-
+}
   @keyframes aiShimmer {
   0% {
     background-position: -200% 0;
@@ -545,9 +612,7 @@
   100% {
     background-position: 200% 0;
   }
-}
-
-}
+  }
 
   /* ---------- Footer ---------- */
   footer{ padding:64px 0 40px; }
@@ -564,9 +629,168 @@
   }
 
   @media (max-width:600px){
+
   .wrap{
-    padding:0 20px;
+    padding:0 16px;
   }
+
+  .nav{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:10px;
+    padding:12px 14px;
+  }
+
+  .brand{
+    width:100%;
+    justify-content:center;
+    gap:8px;
+  }
+
+  .brand img{
+    width:38px;
+    height:38px;
+  }
+
+  .brand-name{
+    font-size:18px;
+  }
+
+  .brand-ai{
+    font-size:24px;
+    margin-left:2px;
+  }
+
+  .social-row{
+    width:100%;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:8px;
+  }
+
+  .social-row .btn{
+    padding:9px 13px !important;
+    font-size:12.5px !important;
+    margin-right:0 !important;
+  }
+
+  .social-btn{
+    width:34px;
+    height:34px;
+  }
+
+  .hero{
+    padding:44px 0 18px;
+  }
+
+  .hero h1{
+    font-size:38px;
+    line-height:1.05;
+  }
+
+  .hero p{
+    font-size:16.5px;
+  }
+
+  .hero-actions{
+    gap:10px;
+    margin-top:26px;
+  }
+
+  .hero-actions .btn{
+    width:100%;
+    justify-content:center;
+  }
+
+  .street{
+    padding-bottom:64px;
+  }
+
+  .feature{
+    padding:64px 0;
+  }
+
+  .about{
+    padding:64px 0;
+  }
+
+  .contact{
+    padding:64px 0;
+  }
+
+  .contact-grid{
+    gap:24px;
+  }
+
+  .contact-form{
+    padding:20px;
+    border-radius:20px;
+  }
+
+  .live-demo-banner{
+    padding:18px;
+  }
+
+  .live-demo-banner h3{
+    font-size:21px;
+  }
+
+  .ai-result-grid{
+    grid-template-columns:1fr;
+    gap:10px;
+  }
+
+  .ai-result-item{
+    padding:16px;
+  }
+
+  .story-section{
+    padding:16px;
+  }
+
+  .automation-step{
+    padding:13px;
+    gap:10px;
+  }
+
+  .story-highlight{
+    font-size:14px;
+  }
+
+  .contact-direct-card{
+    padding:20px;
+  }
+
+  .contact-email-btn{
+    width:100%;
+    text-align:center;
+  }
+
+  .tech-list{
+    flex-direction:column;
+    align-items:stretch;
+  }
+
+  .tech-list span{
+    text-align:center;
+  }
+
+  .footer-top{
+    justify-content:center;
+    text-align:center;
+  }
+
+  .footer-brand{
+    width:100%;
+    justify-content:center;
+  }
+
+  .footer-bottom{
+    flex-direction:column;
+    text-align:center;
+  }
+}
 
   .nav{
     display:flex;
@@ -589,7 +813,7 @@
   .hero{
     padding:56px 0 20px;
   }
-}
+
 
   /* focus visibility */
   a:focus-visible, .btn:focus-visible{ outline:3px solid var(--coral); outline-offset:3px; }
@@ -636,9 +860,14 @@
   <section class="hero">
     <div class="wrap">
       <div class="hero-inner">
-        <p class="eyebrow">Indie apps, built one at a time</p>
-        <h1>A growing family<br>of <em>useful</em> apps.</h1>
-        <p>Appy Family is a small house of independent apps — each one built to solve one problem well. First up: Nozey. More are on the way.</p>
+        <p class="eyebrow">Practical technology. Real problems.</p>
+
+<h1>Building useful technology<br>for <em>everyday problems.</em></h1>
+
+<p>
+  Appy Family creates practical apps, digital products and AI-powered tools
+  designed to make everyday things simpler.
+</p>
         <div class="hero-actions">
           <a class="btn btn-primary" href="#street">Meet the apps</a>
           <a class="btn btn-ghost" href="#about">Our story</a>
@@ -684,19 +913,34 @@
           </div>
         </div>
 
-        <!-- PLOT 2 -->
-        <div class="house plot">
-          <div class="roof">
-            <svg viewBox="0 0 220 54" preserveAspectRatio="none">
-              <polyline points="4,54 110,4 216,54" fill="none" stroke="rgba(255,255,255,0.35)" stroke-width="2.5" stroke-dasharray="7 7" stroke-linecap="round"/>
-            </svg>
-          </div>
-          <div class="card">
-            <p class="plot-label">Plot 02</p>
-            <p class="plot-title">Foundations being poured</p>
-            <p class="plot-sub">The next app in the family is still on the drawing board.</p>
-          </div>
-        </div>
+ <!-- APPY TAPPY: coming soon -->
+<div class="house live">
+  <div class="roof"></div>
+  <div class="card">
+    <span class="status-pill">Coming Soon</span>
+
+    <img
+      src="assets/appytappy-logo.jpg"
+      alt="Appy Tappy logo"
+      class="app-logo"
+    >
+
+    <h3>Appy Tappy</h3>
+
+    <p class="tagline">
+      Helping lost things find their way home. Tap an Appy Tappy NFC tag
+      to identify an item and safely connect with its owner.
+    </p>
+
+    <div class="tags">
+      <span class="tag">NFC Powered</span>
+      <span class="tag">Lost &amp; Found</span>
+      <span class="tag">Privacy First</span>
+    </div>
+
+    <span class="card-link">Coming soon →</span>
+  </div>
+</div>
 
         <!-- PLOT 3 -->
         <div class="house plot">
@@ -750,12 +994,51 @@
       <div class="about-inner">
         <p class="eyebrow">Why "Appy Family"</p>
         <h2>Small apps, built with care, one at a time.</h2>
-        <p>Appy Family started with a simple idea: build the kind of apps you'd actually want a family member to use — straightforward, useful, and honest about what they do. Nozey is the first house on the street. Each new app gets built the same way: pick one real problem, solve it well, and give it room to grow.</p>
+       <p>
+  Appy Family started with a simple idea: use technology to solve real
+  problems in simple, practical ways. From mobile apps like Nozey, to new
+  products like Appy Tappy, to practical AI automation, everything we build
+  starts with the same question — can technology make this easier?
+</p>
+
+<p>
+  We're building and learning in public — turning ideas into real products,
+  testing what works, and giving the best ideas room to grow.
+</p>
         <p>Follow along as the family grows — new plots get built out in public, right here.</p>
       </div>
     </div>
   </section>
+<!-- AI VISION -->
+<section class="ai-vision">
+  <div class="wrap">
+    <div class="ai-vision-inner">
 
+      <p class="ai-vision-eyebrow">The world is changing</p>
+
+      <h2>
+        AI is changing<br>
+        how we <span>do things.</span>
+      </h2>
+
+      <p class="ai-vision-lead">
+        Not someday. Right now.
+      </p>
+
+      <p class="ai-vision-copy">
+        How we work. How we build. How we solve everyday problems.
+        At Appy Family, we're exploring how AI can take things that are
+        complicated, repetitive or frustrating — and make them simpler,
+        faster and more useful.
+      </p>
+
+      <p class="ai-vision-action">
+        Don't just read about AI. <strong>Experience it.</strong> ↓
+      </p>
+
+    </div>
+  </div>
+</section>
   <!-- CONTACT -->
   <section class="contact" id="contact">
     <div class="wrap">
