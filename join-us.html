@@ -1,0 +1,948 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Join The Family | Appy Family</title>
+
+  <meta
+    name="description"
+    content="Join Appy Family and help us build, market and grow practical technology for everyday problems.">
+  
+  <style>
+  * {
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background: #fbf8f2;
+    color: #172b55;
+  }
+
+  .wrap {
+    width: min(1120px, calc(100% - 40px));
+    margin: 0 auto;
+  }
+
+  header {
+    padding: 22px 0;
+  }
+
+  .join-nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+  }
+
+  .join-brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+    color: #172b55;
+    font-size: 22px;
+    font-weight: 800;
+  }
+
+  .join-brand img {
+    width: 52px;
+    height: 52px;
+    object-fit: contain;
+  }
+
+  .join-brand span span {
+    color: #1768e5;
+  }
+
+  .back-home {
+    display: inline-flex;
+    align-items: center;
+    padding: 12px 20px;
+    border: 2px solid #172b55;
+    border-radius: 999px;
+    color: #172b55;
+    text-decoration: none;
+    font-weight: 700;
+  }
+
+  .back-home:hover {
+    background: #172b55;
+    color: white;
+  }
+
+  .join-hero {
+  padding: 90px 0 110px;
+  text-align: center;
+}
+
+.join-eyebrow {
+  margin: 0 0 20px;
+  font-size: 14px;
+  font-weight: 800;
+  letter-spacing: 4px;
+  color: #1768e5;
+}
+
+.join-hero h1 {
+  max-width: 850px;
+  margin: 0 auto 28px;
+  font-size: clamp(46px, 7vw, 82px);
+  line-height: 1.02;
+  letter-spacing: -3px;
+  color: #172b55;
+}
+
+.join-hero h1 span {
+  color: #ff6555;
+}
+
+.join-lead {
+  max-width: 720px;
+  margin: 0 auto;
+  font-size: 21px;
+  line-height: 1.7;
+  color: #596783;
+}
+
+.role-section {
+  padding: 80px 0;
+  background: #ffffff;
+}
+
+.role-wrap {
+  max-width: 900px;
+}
+
+.role-heading {
+  margin-bottom: 45px;
+}
+
+.role-label {
+  margin: 0 0 12px;
+  color: #1768e5;
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 3px;
+}
+
+.role-heading h2 {
+  margin: 0 0 22px;
+  color: #172b55;
+  font-size: clamp(32px, 5vw, 48px);
+  line-height: 1.1;
+}
+
+.role-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.role-meta span {
+  padding: 9px 14px;
+  background: #f3f6fb;
+  border-radius: 999px;
+  color: #44516c;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.role-intro {
+  padding: 38px;
+  background: #fbf8f2;
+  border-radius: 24px;
+  border: 1px solid #eee8df;
+}
+
+.role-intro h3 {
+  margin: 0 0 20px;
+  color: #172b55;
+  font-size: 26px;
+  line-height: 1.3;
+}
+
+.role-intro p {
+  margin: 0 0 18px;
+  color: #596783;
+  font-size: 17px;
+  line-height: 1.75;
+}
+
+.role-intro p:last-child {
+  margin-bottom: 0;
+}
+
+.responsibilities-section {
+  padding: 90px 0;
+  background: #fbf8f2;
+}
+
+.section-heading {
+  max-width: 700px;
+  margin-bottom: 45px;
+}
+
+.section-heading h2 {
+  margin: 0 0 18px;
+  color: #172b55;
+  font-size: clamp(32px, 5vw, 48px);
+  line-height: 1.1;
+}
+
+.section-heading > p:last-child {
+  margin: 0;
+  color: #596783;
+  font-size: 18px;
+  line-height: 1.7;
+}
+
+.responsibility-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.responsibility-card {
+  padding: 32px;
+  background: #ffffff;
+  border: 1px solid #eee8df;
+  border-radius: 22px;
+}
+
+.responsibility-card > span {
+  display: block;
+  margin-bottom: 18px;
+  font-size: 30px;
+}
+
+.responsibility-card h3 {
+  margin: 0 0 12px;
+  color: #172b55;
+  font-size: 20px;
+}
+
+.responsibility-card p {
+  margin: 0;
+  color: #596783;
+  font-size: 16px;
+  line-height: 1.7;
+}
+
+.candidate-section {
+  padding: 90px 0;
+  background: #ffffff;
+}
+
+.candidate-columns {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 22px;
+}
+
+.candidate-box {
+  padding: 34px;
+  background: #fbf8f2;
+  border: 1px solid #eee8df;
+  border-radius: 22px;
+}
+
+.candidate-desirable {
+  background: #f3f7ff;
+  border-color: #dce8fa;
+}
+
+.candidate-box h3 {
+  margin: 0 0 24px;
+  color: #172b55;
+  font-size: 22px;
+  line-height: 1.3;
+}
+
+.candidate-box ul {
+  margin: 0;
+  padding-left: 22px;
+}
+
+.candidate-box li {
+  margin-bottom: 16px;
+  color: #596783;
+  font-size: 16px;
+  line-height: 1.65;
+}
+
+.candidate-box li:last-child {
+  margin-bottom: 0;
+}
+
+.founder-signoff {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  margin-top: 34px;
+  padding-top: 30px;
+  border-top: 1px solid #d9e3f2;
+}
+
+.founder-photo {
+  width: 140px;
+  height: 140px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #dcecff, #f7faff);
+  border: 5px solid #1768e5;
+  box-shadow: 12px 8px 24px rgba(23, 43, 85, 0.18);
+  overflow: hidden;
+}
+
+.founder-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
+.founder-details h3 {
+  margin: 0 0 4px;
+  color: #172b55;
+  font-size: 21px;
+}
+
+.founder-title {
+  margin: 0 0 8px !important;
+  color: #1768e5 !important;
+  font-size: 15px !important;
+  font-weight: 700;
+}
+
+.founder-message {
+  margin: 0 !important;
+  max-width: 520px;
+  color: #596783 !important;
+  font-size: 15px !important;
+  line-height: 1.6 !important;
+  font-style: italic;
+}
+
+.cofounder-section {
+  padding: 90px 0;
+  background: #fbf8f2;
+}
+
+.cofounder-card {
+  padding: 50px;
+  background: linear-gradient(135deg, #f7faff 0%, #edf4ff 100%);
+  border: 1px solid #d8e6f8;
+  border-radius: 28px;
+  box-shadow: 0 14px 40px rgba(23, 43, 85, 0.08);
+}
+
+.cofounder-icon {
+  margin-bottom: 16px;
+  font-size: 34px;
+}
+
+.cofounder-content h2 {
+  margin: 8px 0 24px;
+  color: #172b55;
+  font-size: clamp(32px, 5vw, 46px);
+  line-height: 1.15;
+}
+
+.cofounder-content > p {
+  margin: 0 0 20px;
+  color: #596783;
+  font-size: 17px;
+  line-height: 1.75;
+}
+
+.cofounder-note {
+  margin-top: 28px;
+  padding: 22px 24px;
+  background: rgba(255, 255, 255, 0.75);
+  border-left: 4px solid #1768e5;
+  border-radius: 12px;
+  color: #44516c;
+  font-size: 16px;
+  line-height: 1.7;
+}
+
+.cofounder-note strong {
+  color: #172b55;
+}
+
+.apply-section {
+  padding: 90px 0 110px;
+  background: #ffffff;
+}
+
+.application-form {
+  padding: 42px;
+  background: #fbf8f2;
+  border: 1px solid #eee8df;
+  border-radius: 28px;
+  box-shadow: 0 14px 40px rgba(23, 43, 85, 0.06);
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.form-group {
+  margin-bottom: 24px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 9px;
+  color: #172b55;
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 15px 16px;
+  border: 1px solid #d8deea;
+  border-radius: 12px;
+  background: #ffffff;
+  color: #172b55;
+  font: inherit;
+  font-size: 16px;
+  outline: none;
+}
+
+.form-group textarea {
+  resize: vertical;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  border-color: #1768e5;
+  box-shadow: 0 0 0 3px rgba(23, 104, 229, 0.10);
+}
+
+.form-confirmation {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  margin: 8px 0 28px;
+  padding: 18px;
+  background: #f3f7ff;
+  border-radius: 12px;
+  color: #44516c;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.form-confirmation input {
+  margin-top: 4px;
+  flex-shrink: 0;
+}
+
+.apply-button {
+  display: inline-block;
+  padding: 15px 26px;
+  border: 0;
+  border-radius: 999px;
+  background: #1768e5;
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.apply-button:hover {
+  background: #1256bd;
+}
+
+.application-success {
+  display: none;
+  padding: 55px 40px;
+  text-align: center;
+  background: #f3f7ff;
+  border: 1px solid #d8e6f8;
+  border-radius: 28px;
+  box-shadow: 0 14px 40px rgba(23, 43, 85, 0.06);
+}
+
+.success-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 70px;
+  height: 70px;
+  margin: 0 auto 22px;
+  border-radius: 50%;
+  background: #1768e5;
+  color: #ffffff;
+  font-size: 34px;
+  font-weight: 800;
+}
+
+.application-success h2 {
+  margin: 0 0 16px;
+  color: #172b55;
+  font-size: 36px;
+}
+
+.application-success p {
+  max-width: 600px;
+  margin: 0 auto 28px;
+  color: #596783;
+  font-size: 17px;
+  line-height: 1.7;
+}
+
+  @media (max-width: 600px) {
+    .wrap {
+      width: min(100% - 28px, 1120px);
+    }
+
+    .cofounder-section {
+  padding: 60px 0;
+    }
+
+.cofounder-card {
+  padding: 28px 22px;
+  border-radius: 22px;
+}
+
+.cofounder-content h2 {
+  font-size: 32px;
+}
+
+.cofounder-note {
+  padding: 18px;
+}
+
+    .founder-signoff {
+  align-items: flex-start;
+  gap: 18px;
+}
+
+.founder-photo {
+  width: 90px;
+  height: 90px;
+}
+
+.founder-details h3 {
+  font-size: 18px;
+}
+
+    .candidate-columns {
+  grid-template-columns: 1fr;
+}
+
+.candidate-box {
+  padding: 25px;
+}
+
+    .join-brand {
+      font-size: 18px;
+    }
+
+    .join-brand img {
+      width: 44px;
+      height: 44px;
+    }
+
+    .back-home {
+      padding: 10px 14px;
+      font-size: 14px;
+    }
+  }
+</style>  
+
+</head>
+
+<body>
+
+  <header>
+  <div class="wrap join-nav">
+
+    <a href="index.html" class="join-brand">
+      <img src="assets/appy-family-logo.jpg" alt="Appy Family logo">
+      <span>Appy <span>Family</span></span>
+    </a>
+
+    <a href="index.html" class="back-home">
+      ← Back to Appy Family
+    </a>
+
+  </div>
+</header>
+<main>
+  <section class="join-hero">
+    <div class="wrap">
+
+      <p class="join-eyebrow">JOIN THE FAMILY</p>
+
+      <h1>
+        Help us grow something
+        <span>worth building.</span>
+      </h1>
+
+      <p class="join-lead">
+        Appy Family is looking for a Marketing & Growth Co-Founder
+        to join us at an early stage and help turn great ideas
+        into products people discover, use and love.
+      </p>
+
+    </div>
+  </section>
+
+  <section class="role-section">
+  <div class="wrap role-wrap">
+
+    <div class="role-heading">
+      <p class="role-label">THE OPPORTUNITY</p>
+
+      <h2>Co-Founder — Marketing & Growth</h2>
+
+      <div class="role-meta">
+        <span>📍 Remote / UK</span>
+        <span>🚀 Early-stage startup</span>
+        <span>🤝 Co-Founder opportunity</span>
+        <span>⏱ Flexible</span>
+      </div>
+    </div>
+
+    <div class="role-intro">
+      <h3>Help us turn good ideas into products people know about.</h3>
+
+      <p>
+        Appy Family is building practical apps and digital products designed
+        to solve everyday problems. We’re looking for a commercially minded,
+        creative co-founder who can take ownership of the marketing and growth
+        side of the business.
+      </p>
+
+      <p>
+        You won’t simply be joining to manage a few social media accounts.
+        We’re looking for somebody who wants to help shape the brand, build an
+        audience, develop our go-to-market strategy and grow Appy Family
+        alongside the founder.
+      </p>
+    </div>
+
+  </div>
+</section>
+
+<section class="responsibilities-section">
+  <div class="wrap role-wrap">
+
+    <div class="section-heading">
+      <p class="role-label">YOUR ROLE</p>
+      <h2>What You’ll Own</h2>
+      <p>
+        You’ll lead the marketing and growth side of Appy Family, working
+        alongside the founder to take our products from launch to real users.
+      </p>
+    </div>
+
+    <div class="responsibility-grid">
+
+      <div class="responsibility-card">
+        <span>📱</span>
+        <h3>Social Media & Content</h3>
+        <p>
+          Own our social media presence, create engaging content and develop
+          a consistent voice across the Appy Family brand and our products.
+        </p>
+      </div>
+
+      <div class="responsibility-card">
+        <span>📈</span>
+        <h3>Growth & User Acquisition</h3>
+        <p>
+          Find creative, low-cost ways to attract users, test new marketing
+          channels and turn awareness into downloads, sign-ups and customers.
+        </p>
+      </div>
+
+      <div class="responsibility-card">
+        <span>🚀</span>
+        <h3>Product Launches</h3>
+        <p>
+          Help plan and execute go-to-market campaigns for new Appy Family
+          products, from early validation through to launch and growth.
+        </p>
+      </div>
+
+      <div class="responsibility-card">
+        <span>🤝</span>
+        <h3>Partnerships & Outreach</h3>
+        <p>
+          Identify creators, communities, organisations and potential partners
+          who can help us reach the right audiences.
+        </p>
+      </div>
+
+      <div class="responsibility-card">
+        <span>💡</span>
+        <h3>Brand & Strategy</h3>
+        <p>
+          Help shape how Appy Family and its products are positioned,
+          communicated and differentiated as the business develops.
+        </p>
+      </div>
+
+      <div class="responsibility-card">
+        <span>🧪</span>
+        <h3>Experiment & Learn</h3>
+        <p>
+          Test ideas, measure what works and continuously improve our
+          marketing rather than relying on assumptions.
+        </p>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<section class="candidate-section">
+  <div class="wrap role-wrap">
+
+    <div class="section-heading">
+      <p class="role-label">ABOUT YOU</p>
+      <h2>What We’re Looking For</h2>
+      <p>
+        We care more about what you can bring to the business than having
+        the perfect CV. You should be proactive, creative and genuinely
+        interested in helping build something from an early stage.
+      </p>
+    </div>
+
+    <div class="candidate-columns">
+
+      <div class="candidate-box">
+        <h3>We’d love to meet someone who...</h3>
+
+        <ul>
+          <li>Understands social media and how to build an engaged audience.</li>
+          <li>Can create, plan or direct compelling digital content.</li>
+          <li>Has a good instinct for branding, messaging and communication.</li>
+          <li>Thinks commercially and understands that marketing ultimately needs to drive growth.</li>
+          <li>Is comfortable testing ideas, learning from results and changing direction when necessary.</li>
+          <li>Can work independently and take genuine ownership of their side of the business.</li>
+          <li>Communicates well and enjoys collaborating on ideas and strategy.</li>
+          <li>Has the ambition and commitment to help build an early-stage company.</li>
+        </ul>
+      </div>
+
+      <div class="candidate-box candidate-desirable">
+        <h3>Great to have — but not essential</h3>
+
+        <ul>
+          <li>Previous marketing, social media, content or growth experience.</li>
+          <li>Experience launching or promoting an app, startup or digital product.</li>
+          <li>Knowledge of paid advertising or performance marketing.</li>
+          <li>Experience working with creators, influencers or online communities.</li>
+          <li>Basic understanding of analytics, conversion and user acquisition.</li>
+          <li>An existing network or audience that could help accelerate early growth.</li>
+        </ul>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<section class="cofounder-section">
+  <div class="wrap role-wrap">
+
+    <div class="cofounder-card">
+
+      <div class="cofounder-icon">🤝</div>
+
+      <div class="cofounder-content">
+        <p class="role-label">IMPORTANT TO KNOW</p>
+
+        <h2>A different kind of opportunity.</h2>
+
+        <p>
+          This is not a salaried job or traditional employment position.
+          Appy Family is an early-stage, bootstrapped business and we're
+          looking for someone who wants to join us as a genuine co-founder.
+        </p>
+
+        <p>
+          You'll be helping shape the business rather than simply carrying
+          out a job description. That means bringing your own ideas, taking
+          ownership of marketing and growth, and having a real voice in
+          where Appy Family goes next.
+        </p>
+
+        <p>
+          There is currently no salary attached to the role. Any potential
+          ownership or equity arrangement would be discussed openly with
+          the right person and agreed as part of a formal co-founder
+          agreement.
+        </p>
+
+        <div class="cofounder-note">
+          <strong>This could be right for you if:</strong>
+          you're excited by the idea of getting involved early, building
+          something from the ground up and helping create the value rather
+          than joining once everything has already been built.
+        </div>
+
+        <div class="founder-signoff">
+
+  <div class="founder-photo">
+    <img src="assets/Lukeprofile.jpg" alt="Luke Cosgrove">
+  </div>
+
+  <div class="founder-details">
+    <h3>Luke Cosgrove</h3>
+    <p class="founder-title">Founder, Appy Family</p>
+    <p class="founder-message">
+      “I’m looking for someone who wants to build this with me,
+      not simply work for me.”
+    </p>
+  </div>
+
+</div>
+
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<section class="apply-section" id="apply">
+  <div class="wrap role-wrap">
+
+    <div class="section-heading">
+      <p class="role-label">JOIN THE FAMILY</p>
+      <h2>Interested in building this with us?</h2>
+      <p>
+        Tell us a little about yourself, what you could bring to Appy Family
+        and why becoming part of an early-stage business interests you.
+      </p>
+    </div>
+
+    <form
+  class="application-form"
+  action="https://docs.google.com/forms/d/e/1FAIpQLSeYApWI23t1yLWM4_OJHeksojPqS2ALFJ3oFaLCk5abBM35Xw/formResponse"
+  method="POST"
+  target="hidden_iframe"
+>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label for="name">Your name</label>
+          <input type="text" id="name" name="entry.965246677" required>
+        </div>
+
+        <div class="form-group">
+          <label for="email">Email address</label>
+          <input type="email" id="email" name="entry.773058273" required>
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label for="profile">LinkedIn or portfolio</label>
+          <input type="url" id="profile" name="entry.1871601765">
+        </div>
+
+        <div class="form-group">
+          <label for="location">Where are you based?</label>
+          <input type="text" id="location" name="entry.158985903">
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="experience">Tell us about your marketing, social media or growth experience</label>
+        <textarea id="experience" name="entry.318416249" rows="5" required></textarea>
+      </div>
+
+      <div class="form-group">
+        <label for="why">Why would you like to join Appy Family?</label>
+        <textarea id="why" name="entry.1448823719" rows="5" required></textarea>
+      </div>
+
+      <div class="form-group">
+        <label for="contribution">What do you think you could bring to the business?</label>
+        <textarea id="contribution" name="entry.115897368" rows="5" required></textarea>
+      </div>
+
+      <div class="form-group">
+        <label for="availability">What level of time/commitment could you realistically give?</label>
+        <textarea id="availability" name="entry.1862351276" rows="3" required></textarea>
+      </div>
+
+      <label class="form-confirmation">
+        <input type="checkbox" required>
+        <span>
+          I understand that this is currently an unpaid co-founder opportunity
+          and not a salaried employment position.
+        </span>
+      </label>
+
+      <button type="submit" class="apply-button">
+        Apply to Join The Family →
+      </button>
+
+    </form>
+
+    <div class="application-success" id="application-success">
+  <div class="success-icon">✓</div>
+
+  <h2>Application received.</h2>
+
+  <p>
+    Thanks for your interest in joining Appy Family.
+    Your application has been received and we'll be in touch if we think
+    there could be a good fit.
+  </p>
+
+  <a href="index.html" class="back-home">
+    Back to Appy Family
+  </a>
+</div>
+
+  </div>
+</section>
+
+</main>
+
+<iframe
+  name="hidden_iframe"
+  id="hidden_iframe"
+  style="display:none;">
+</iframe>
+
+<script>
+  const applicationForm = document.querySelector('.application-form');
+  const successMessage = document.getElementById('application-success');
+
+  applicationForm.addEventListener('submit', function () {
+    setTimeout(function () {
+      applicationForm.style.display = 'none';
+      successMessage.style.display = 'block';
+      successMessage.scrollIntoView({
+        behavior: 'smooth',
+        block: 'center'
+      });
+    }, 1000);
+  });
+</script>
+
+</body>
+</html>
