@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Appy Family AI is a voice-first personal AI assistant concept currently in development by Appy Family. Talk naturally, let AI understand the request, act through authorised services, and confirm the result.">
+<title>Appy Family AI — Talk to your phone. Let it do the work.</title>
+<style>
+:root{
+  --ink:#102b5c; --blue:#2860db; --blue2:#5b83ea; --soft:#f4f7fc;
+  --line:#dce5f2; --muted:#60708b; --white:#fff; --green:#15966f;
+  --shadow:0 22px 60px rgba(16,43,92,.12); --radius:24px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:var(--ink);background:#fff;line-height:1.6}
+button,a{font:inherit} a{color:inherit}
+.container{width:min(1120px,calc(100% - 32px));margin:auto}
+section{padding:78px 0}
+.eyebrow{display:inline-flex;align-items:center;gap:8px;padding:7px 12px;border-radius:999px;background:#edf3ff;color:var(--blue);font-size:.78rem;font-weight:800;letter-spacing:.05em;text-transform:uppercase}
+.eyebrow i{width:8px;height:8px;border-radius:50%;background:var(--blue);box-shadow:0 0 0 5px rgba(40,96,219,.1)}
+h1,h2,h3,p{margin-top:0}
+h1{font-size:clamp(2.5rem,7vw,5.6rem);line-height:.98;letter-spacing:-.055em;max-width:900px;margin:22px auto}
+h2{font-size:clamp(2rem,5vw,3.8rem);line-height:1.04;letter-spacing:-.045em}
+h3{line-height:1.2}
+.lead{font-size:clamp(1.05rem,2vw,1.25rem);color:var(--muted);max-width:720px}
+.center{text-align:center}.center .lead{margin-left:auto;margin-right:auto}
+.btns{display:flex;gap:12px;flex-wrap:wrap;justify-content:center;margin-top:30px}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:52px;padding:0 20px;border-radius:14px;text-decoration:none;font-weight:800;border:1px solid var(--ink);transition:.2s transform,.2s box-shadow,.2s background}
+.btn:hover{transform:translateY(-2px);box-shadow:0 10px 25px rgba(16,43,92,.13)}
+.btn.primary{background:var(--ink);color:white}.btn.secondary{background:white}
+nav{position:sticky;top:0;z-index:20;background:rgba(255,255,255,.88);backdrop-filter:blur(16px);border-bottom:1px solid rgba(220,229,242,.75)}
+.navin{min-height:70px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+.brand{font-weight:900;letter-spacing:-.03em;text-decoration:none;font-size:1.08rem}.brand span{color:var(--blue)}
+.links{display:flex;align-items:center;gap:20px}.links a{text-decoration:none;font-size:.9rem;font-weight:700}
+.menu{display:none;border:0;background:transparent;font-size:1.5rem;color:var(--ink)}
+.hero{padding-top:75px;background:radial-gradient(circle at 50% 35%,#edf4ff 0,rgba(237,244,255,.3) 30%,transparent 62%)}
+.phone-wrap{margin:56px auto 0;max-width:400px;position:relative}
+.phone{border:9px solid #101827;border-radius:48px;background:#f8faff;box-shadow:0 35px 90px rgba(16,43,92,.24);padding:17px;min-height:680px;position:relative;overflow:hidden}
+.notch{width:104px;height:26px;border-radius:20px;background:#101827;margin:-8px auto 22px}
+.app-head{display:flex;align-items:center;justify-content:space-between;font-size:.84rem;font-weight:800}.app-head b{font-size:1rem}
+.status{font-size:.7rem;padding:5px 9px;border-radius:999px;background:#e9f8f3;color:#137c60}
+.chat{padding:36px 3px 135px}.bubble{max-width:88%;padding:14px 16px;border-radius:18px;margin:12px 0;font-size:.92rem;box-shadow:0 5px 15px rgba(16,43,92,.05)}
+.user{margin-left:auto;background:var(--ink);color:#fff;border-bottom-right-radius:5px}.ai{background:#fff;border:1px solid var(--line);border-bottom-left-radius:5px}
+.complete{display:flex;align-items:center;gap:8px;margin-top:18px;color:var(--green);font-weight:900;opacity:0;transform:translateY(8px);transition:.35s}.complete.show{opacity:1;transform:none}
+.mic-area{position:absolute;bottom:22px;left:0;right:0;text-align:center}.mic{width:82px;height:82px;border:0;border-radius:50%;background:var(--blue);color:#fff;font-size:2rem;cursor:pointer;box-shadow:0 0 0 10px rgba(40,96,219,.1);transition:.2s}.mic.listening{animation:pulse 1.2s infinite}.mic-label{font-size:.76rem;color:var(--muted);font-weight:700;margin-top:10px}
+@keyframes pulse{50%{box-shadow:0 0 0 24px rgba(40,96,219,.04);transform:scale(1.04)}}
+.problem{background:var(--ink);color:#fff}.problem .lead{color:#c9d6ed}.oldflow{color:#aebbd1;text-decoration:line-through;margin:28px 0 8px;font-weight:700}.justask{font-size:clamp(2.8rem,7vw,6rem);font-weight:950;letter-spacing:-.06em}
+.steps,.cards,.permissions,.roadmap{display:grid;gap:16px}
+.steps{grid-template-columns:repeat(4,1fr);margin-top:42px}.step,.card,.permission,.phase{border:1px solid var(--line);border-radius:var(--radius);padding:25px;background:#fff}
+.num{font-size:.8rem;font-weight:900;color:var(--blue);margin-bottom:28px}.icon{font-size:1.55rem;margin-bottom:14px}
+.cards{grid-template-columns:repeat(4,1fr);margin-top:35px}.card{cursor:pointer;transition:.2s}.card:hover,.card.active{transform:translateY(-4px);box-shadow:var(--shadow);border-color:#b7caf3}.card p,.step p,.permission p,.phase p{color:var(--muted);margin-bottom:0;font-size:.92rem}
+.note{margin-top:22px;padding:14px 17px;border-radius:14px;background:#f5f8fd;color:var(--muted);font-size:.88rem}
+.language{background:var(--soft)}.quotes{display:flex;gap:12px;flex-wrap:wrap;justify-content:center;margin-top:36px}.quote{background:#fff;border:1px solid var(--line);border-radius:999px;padding:13px 18px;font-weight:750}
+.workflow{display:grid;grid-template-columns:1fr 1fr;gap:45px;align-items:center}.request{background:var(--ink);color:#fff;border-radius:28px;padding:32px;box-shadow:var(--shadow)}.request small{color:#b9c7dd;font-weight:800}.request blockquote{font-size:1.5rem;line-height:1.35;margin:18px 0 0}
+.checks{display:grid;gap:9px}.check{padding:12px 14px;border:1px solid var(--line);border-radius:13px;background:#fff;opacity:.45;transform:translateX(10px);transition:.35s}.check.visible{opacity:1;transform:none}.check b{color:var(--green);margin-right:8px}
+.trust{background:#f7f9fd}.permissions{grid-template-columns:repeat(4,1fr);margin-top:34px}.permission strong{display:block;color:var(--blue);font-size:1.15rem;margin-bottom:7px}
+.services{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin-top:35px}.service{border:1px solid var(--line);border-radius:13px;padding:11px 16px;background:#fff;font-weight:800}
+.roadmap{grid-template-columns:repeat(3,1fr);margin-top:38px}.phase{position:relative}.phase.current{border:2px solid var(--blue)}.building{display:inline-block;margin-top:14px;background:#edf3ff;color:var(--blue);border-radius:999px;padding:5px 9px;font-size:.72rem;font-weight:900}
+.final{background:linear-gradient(145deg,#102b5c,#173e7f);color:#fff}.final .lead{color:#cbd8ec}.placeholder{opacity:.68;cursor:not-allowed}
+footer{padding:32px 0;border-top:1px solid var(--line);color:var(--muted);font-size:.88rem}.foot{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+.reveal{opacity:0;transform:translateY(18px);transition:.65s ease}.reveal.visible{opacity:1;transform:none}
+@media(max-width:850px){.steps,.cards,.permissions{grid-template-columns:repeat(2,1fr)}.roadmap{grid-template-columns:repeat(2,1fr)}.workflow{grid-template-columns:1fr}.links{display:none;position:absolute;top:70px;left:16px;right:16px;background:#fff;border:1px solid var(--line);border-radius:18px;padding:18px;box-shadow:var(--shadow);flex-direction:column;align-items:stretch}.links.open{display:flex}.menu{display:block}}
+@media(max-width:560px){section{padding:58px 0}.container{width:min(100% - 24px,1120px)}.hero{padding-top:52px}.steps,.cards,.permissions,.roadmap{grid-template-columns:1fr}.phone{min-height:630px;border-radius:40px}.btn{width:100%}.quote{border-radius:16px;width:100%;text-align:left}.request{padding:24px}.foot{flex-direction:column}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{animation:none!important;transition:none!important}.reveal{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+<nav>
+  <div class="container navin">
+    <a class="brand" href="home.html">Appy Family <span>AI</span></a>
+    <button class="menu" aria-label="Open navigation" aria-expanded="false">☰</button>
+    <div class="links">
+      <a href="#how">How it works</a><a href="#capabilities">Possibilities</a><a href="#privacy">Privacy</a><a href="#roadmap">Roadmap</a><a href="home.html">Back to Appy Family</a>
+    </div>
+  </div>
+</nav>
+
+<main>
+<section class="hero center">
+<div class="container">
+  <span class="eyebrow"><i></i> Currently in development</span>
+  <h1>Don't tell your phone what to open. Tell it what to do.</h1>
+  <p class="lead">Appy Family AI is being developed as a voice-first personal assistant that can turn simple conversations into real-world actions.</p>
+  <div class="btns"><a class="btn primary" href="#project">Explore the Project ↓</a><a class="btn secondary" href="#how">See How It Works</a></div>
+
+  <div class="phone-wrap reveal" aria-label="Concept demonstration of the Appy Family AI mobile interface">
+    <div class="phone">
+      <div class="notch"></div>
+      <div class="app-head"><b>Appy Family AI</b><span class="status">Concept demo</span></div>
+      <div class="chat">
+        <div class="bubble user">Book a 30-minute meeting with Sarah next Tuesday at 2pm.</div>
+        <div class="bubble ai" id="aiBubble">I'll check your calendar and arrange it.</div>
+        <div class="complete" id="complete">✓ Meeting arranged</div>
+      </div>
+      <div class="mic-area">
+        <button class="mic" id="mic" aria-label="Play simulated voice interaction">●</button>
+        <div class="mic-label" id="micLabel">Tap to simulate listening</div>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+
+<section class="problem" id="project">
+<div class="container center reveal">
+  <h2>Your digital life is scattered across dozens of apps.</h2>
+  <p class="lead">Even simple jobs can mean opening an app, finding a contact, checking a calendar, writing a message and switching between services. We're exploring a simpler interaction.</p>
+  <div class="oldflow">Open → Search → Tap → Copy → Paste → Switch apps → Confirm</div>
+  <div class="justask">Just ask.</div>
+</div>
+</section>
+
+<section id="how">
+<div class="container">
+  <div class="center reveal"><span class="eyebrow">Our vision</span><h2>Speak → Understand → Act → Confirm</h2><p class="lead">The goal is to hide the technical complexity and let people communicate naturally.</p></div>
+  <div class="steps">
+    <article class="step reveal"><div class="num">01 — SPEAK</div><div class="icon">🎙️</div><h3>Say what you need</h3><p>Tell Appy Family AI what you want in your own words.</p></article>
+    <article class="step reveal"><div class="num">02 — UNDERSTAND</div><div class="icon">◎</div><h3>Interpret the request</h3><p>The AI works out the intent and what needs to happen.</p></article>
+    <article class="step reveal"><div class="num">03 — ACT</div><div class="icon">↗</div><h3>Use authorised tools</h3><p>The assistant could use connected services to carry out approved actions.</p></article>
+    <article class="step reveal"><div class="num">04 — CONFIRM</div><div class="icon">✓</div><h3>Keep you informed</h3><p>You receive a clear confirmation of what has been completed.</p></article>
+  </div>
+</div>
+</section>
+
+<section id="capabilities" style="background:#fbfcff">
+<div class="container">
+  <div class="center reveal"><span class="eyebrow">Target capabilities</span><h2>What could it do?</h2><p class="lead">These are planned areas we're exploring — not a claim that every integration is available in the current prototype.</p></div>
+  <div class="cards">
+    <article class="card reveal"><div class="icon">📅</div><h3>Calendar</h3><p>Create, change and manage appointments.</p></article>
+    <article class="card reveal"><div class="icon">🎥</div><h3>Meetings</h3><p>Arrange meetings across supported services.</p></article>
+    <article class="card reveal"><div class="icon">📧</div><h3>Email</h3><p>Find important messages, prepare responses and simplify routine communication.</p></article>
+    <article class="card reveal"><div class="icon">💬</div><h3>Messaging</h3><p>Prepare or send messages through authorised supported services.</p></article>
+    <article class="card reveal"><div class="icon">⏰</div><h3>Reminders</h3><p>Create reminders and organise what needs doing.</p></article>
+    <article class="card reveal"><div class="icon">👥</div><h3>Contacts</h3><p>Find people using contact information you have authorised.</p></article>
+    <article class="card reveal"><div class="icon">📋</div><h3>Tasks</h3><p>Turn everyday conversations into actionable tasks.</p></article>
+    <article class="card reveal"><div class="icon">🔄</div><h3>Multi-step workflows</h3><p>Combine several approved actions into one simple instruction.</p></article>
+  </div>
+  <div class="note">Early concept: exact integrations and capabilities will depend on technical development, platform permissions and user-controlled access.</div>
+</div>
+</section>
+
+<section class="language">
+<div class="container center reveal">
+  <span class="eyebrow">Natural language</span><h2>You don't need to learn commands.</h2>
+  <p class="lead">The interaction should feel like speaking to someone who understands what you mean.</p>
+  <div class="quotes"><div class="quote">“What's on my calendar tomorrow?”</div><div class="quote">“Tell Sarah I'll be ten minutes late.”</div><div class="quote">“Book a meeting with John next week.”</div><div class="quote">“Remind me to call Dad at 6pm.”</div><div class="quote">“I've got an hour free. What should I get done?”</div></div>
+</div>
+</section>
+
+<section>
+<div class="container workflow">
+  <div class="reveal"><span class="eyebrow">Long-term agent concept</span><h2>One sentence. Multiple actions.</h2><p class="lead">The goal is for Appy Family AI to become an intelligent orchestration layer between you and the services you choose to use.</p><div class="request"><small>YOU SAY</small><blockquote>“Book me a meeting with Sarah next Tuesday at 2pm.”</blockquote></div></div>
+  <div class="checks reveal" id="checks"><div class="check"><b>✓</b> Understand the request</div><div class="check"><b>✓</b> Find Sarah</div><div class="check"><b>✓</b> Check calendar availability</div><div class="check"><b>✓</b> Create the meeting</div><div class="check"><b>✓</b> Generate the meeting link</div><div class="check"><b>✓</b> Send the invitation</div><div class="check"><b>✓</b> Add it to the calendar</div><div class="check"><b>✓</b> Confirm completion</div></div>
+</div>
+</section>
+
+<section class="trust" id="privacy">
+<div class="container">
+  <div class="center reveal"><span class="eyebrow">Privacy & control</span><h2>Useful shouldn't mean unrestricted.</h2><p class="lead">Our vision is not to give an AI unlimited access to someone's phone. Users should decide which services it can access, what it can prepare and what it can actually do.</p></div>
+  <div class="permissions">
+    <article class="permission reveal"><strong>Ask</strong><p>The AI answers questions using information it is permitted to access.</p></article>
+    <article class="permission reveal"><strong>Prepare</strong><p>The AI prepares an action, such as a draft message or proposed event.</p></article>
+    <article class="permission reveal"><strong>Confirm</strong><p>The AI asks for permission before completing a sensitive action.</p></article>
+    <article class="permission reveal"><strong>Automate</strong><p>Authorised routine tasks could be performed automatically within user-defined limits.</p></article>
+  </div>
+</div>
+</section>
+
+<section>
+<div class="container center reveal">
+  <span class="eyebrow">Built to grow</span><h2>One assistant. The services you already use.</h2><p class="lead">The initial concept is mobile-first. Over time, the underlying approach could support a wider range of authorised services and workflows.</p>
+  <div class="services"><span class="service">Google</span><span class="service">Microsoft</span><span class="service">Email</span><span class="service">Calendar</span><span class="service">Meet</span><span class="service">Teams</span><span class="service">Zoom</span><span class="service">CRM</span><span class="service">Messaging</span><span class="service">Tasks</span></div>
+  <div class="note">Service names are shown as examples of potential integration categories. No affiliation or current integration is implied.</div>
+</div>
+</section>
+
+<section id="roadmap" style="background:#fbfcff">
+<div class="container">
+  <div class="center reveal"><span class="eyebrow">Project roadmap</span><h2>From concept to useful assistant.</h2><p class="lead">A staged development path keeps the project focused on proving the interaction before expanding the integrations.</p></div>
+  <div class="roadmap">
+    <article class="phase current reveal"><div class="num">PHASE 01</div><h3>Concept & prototype</h3><p>Define the product experience and test the core interaction.</p><span class="building">Currently building</span></article>
+    <article class="phase reveal"><div class="num">PHASE 02</div><h3>Voice interaction</h3><p>Develop a reliable voice-first request experience.</p></article>
+    <article class="phase reveal"><div class="num">PHASE 03</div><h3>AI-powered actions</h3><p>Connect interpreted requests to controlled actions.</p></article>
+    <article class="phase reveal"><div class="num">PHASE 04</div><h3>Calendar & communication</h3><p>Explore useful integrations for everyday coordination.</p></article>
+    <article class="phase reveal"><div class="num">PHASE 05</div><h3>Multi-step workflows</h3><p>Test safe orchestration across several approved actions.</p></article>
+    <article class="phase reveal"><div class="num">PHASE 06</div><h3>Private beta testing</h3><p>Put the concept in the hands of real testers and learn.</p></article>
+  </div>
+</div>
+</section>
+
+<section class="final center">
+    <div class="container reveal">
+        <span class="eyebrow">APPY FAMILY PROJECT</span>
+
+        <h2>We're building a different way to use your phone.</h2>
+
+        <p class="lead">
+            Appy Family AI is an early-stage idea exploring a simple question:
+            what if you could just tell your phone what you want done?
+        </p>
+
+        <div class="btns">
+            <a class="btn final-back-btn" href="home.html">
+    Back to Appy Family →
+</a>
+        </div>
+    </div>
+</section>
+</main>
+
+<footer><div class="container foot"><strong>Appy Family AI</strong><span>Concept project currently in development by Appy Family.</span><a href="home.html">Back to Appy Family</a></div></footer>
+
+<script>
+// Front-end concept demo only. No microphone, AI model, calendar, messaging,
+// email or third-party service is connected by this page.
+const mic=document.getElementById('mic'), label=document.getElementById('micLabel'), complete=document.getElementById('complete');
+mic.addEventListener('click',()=>{
+  mic.classList.add('listening'); label.textContent='Listening…'; complete.classList.remove('show');
+  setTimeout(()=>{label.textContent='Understanding…'},900);
+  setTimeout(()=>{mic.classList.remove('listening');label.textContent='Demo complete — tap again';complete.classList.add('show')},1900);
+});
+
+const menu=document.querySelector('.menu'), links=document.querySelector('.links');
+menu.addEventListener('click',()=>{const open=links.classList.toggle('open');menu.setAttribute('aria-expanded',open);});
+links.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{links.classList.remove('open');menu.setAttribute('aria-expanded','false')}));
+
+document.querySelectorAll('.card').forEach(card=>card.addEventListener('click',()=>card.classList.toggle('active')));
+
+const observer=new IntersectionObserver(entries=>entries.forEach(entry=>{
+  if(entry.isIntersecting){
+    entry.target.classList.add('visible');
+    if(entry.target.id==='checks') entry.target.querySelectorAll('.check').forEach((c,i)=>setTimeout(()=>c.classList.add('visible'),i*120));
+    observer.unobserve(entry.target);
+  }
+}),{threshold:.12});
+document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
+</script>
+</body>
+</html>
