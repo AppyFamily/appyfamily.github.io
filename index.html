@@ -339,7 +339,7 @@
   );
     }
 
-   /* BUILD REFLECTION — TEST VERSION */
+   /* BUILD REFLECTION ΓÇö TEST VERSION */
 
 
 
@@ -1441,14 +1441,14 @@
 }
 
 
-/* FIRST — SHARP IMPACT */
+/* FIRST ΓÇö SHARP IMPACT */
 
 .impact-ripple span:nth-child(1) {
   animation-delay: 2.78s;
 }
 
 
-/* SECOND — MAIN DISPLACED WATER */
+/* SECOND ΓÇö MAIN DISPLACED WATER */
 
 .impact-ripple span:nth-child(2) {
   width: 95px;
@@ -1460,7 +1460,7 @@
 }
 
 
-/* THIRD — LARGE OUTER WAVE */
+/* THIRD ΓÇö LARGE OUTER WAVE */
 
 .impact-ripple span:nth-child(3) {
   width: 125px;
@@ -2286,112 +2286,6 @@ transform-origin: top center;
   }
 }
 
-    /* MOBILE */
-
-    @media (max-width: 600px) {
-
-      .hero-brand {
-        top: 24px;
-        font-size: 22px;
-        position: absolute;
-        z-index: 5;
-      }
-
-      /* CLOUD WISP IN FRONT OF APPY FAMILY */
-.hero-brand::after {
-  content: "";
-  position: absolute;
-
-  left: 50%;
-  bottom: -8px;
-
-  width: 115%;
-  height: 24px;
-
-  transform: translateX(-50%);
-
-  background:
-    radial-gradient(
-      ellipse at 18% 70%,
-      rgba(255,255,255,.92) 0%,
-      rgba(255,255,255,.72) 35%,
-      transparent 70%
-    ),
-    radial-gradient(
-      ellipse at 48% 80%,
-      rgba(255,255,255,.95) 0%,
-      rgba(255,255,255,.72) 38%,
-      transparent 72%
-    ),
-    radial-gradient(
-      ellipse at 82% 65%,
-      rgba(255,255,255,.9) 0%,
-      rgba(255,255,255,.65) 35%,
-      transparent 70%
-    );
-
-  filter: blur(3px);
-
-  z-index: 2;
-  pointer-events: none;
-}
-
-      .hero-word {
-        font-size: 105px;
-        letter-spacing: -6px;
-      }
-
-      .phone {
-        width: 220px;
-        height: 450px;
-        border-radius: 36px;
-      }
-
-      .phone-screen {
-        border-radius: 28px;
-        padding: 22px;
-      }
-
-      .object-one {
-        width: 75px;
-        height: 75px;
-        left: -10px;
-        top: 22%;
-        font-size: 30px;
-      }
-
-      .object-two {
-        width: 70px;
-        height: 70px;
-        right: -8px;
-        top: 27%;
-        font-size: 28px;
-      }
-
-      .object-three {
-        width: 85px;
-        height: 70px;
-        left: -15px;
-        bottom: 20%;
-        font-size: 30px;
-      }
-
-      .object-four {
-        width: 75px;
-        height: 75px;
-        right: -12px;
-        bottom: 17%;
-        font-size: 30px;
-      }
-
-      .hero-caption {
-        width: 100%;
-        text-align: center;
-        bottom: 22px;
-        font-size: 11px;
-      }
-    }
-
     /* CAPTION FADE WHEN PHONE DROPS */
 .hero-caption {
   animation: captionFadeAway 1s ease 1.5s forwards !important;
@@ -2411,7 +2305,816 @@ transform-origin: top center;
   }
 }
 
-  </style>
+/* =========================================
+   MOBILE RESPONSIVE LAYER
+   Desktop rules above remain untouched.
+   Mobile keeps the same visual language and
+   proportions while fitting a narrow viewport.
+   ========================================= */
+
+@media (max-width: 600px) {
+
+  .hero {
+    min-height: 100svh;
+    height: 100svh;
+  }
+
+  /* Keep the same waterline relationship as desktop */
+  .water-stage {
+    height: 22%;
+  }
+
+  /* Scale the top brand/cloud as one visual group */
+  .brand-cloud {
+    width: 360px;
+    height: 110px;
+    top: 4%;
+  }
+
+  .brand-cloud .cloud-left {
+    width: 145px;
+    height: 61px;
+    left: 20px;
+    top: 42px;
+  }
+
+  .brand-cloud .cloud-centre {
+    width: 174px;
+    height: 102px;
+    left: 93px;
+    top: 3px;
+  }
+
+  .brand-cloud .cloud-right {
+    width: 142px;
+    height: 58px;
+    right: 20px;
+    top: 44px;
+  }
+
+  .brand-cloud .cloud-glow {
+    width: 226px;
+    height: 55px;
+    left: 67px;
+    top: 42px;
+  }
+
+  .brand-cloud .cloud-centre::before {
+    width: 73px;
+    height: 73px;
+    left: 12px;
+    top: -16px;
+  }
+
+  .brand-cloud .cloud-centre::after {
+    width: 90px;
+    height: 84px;
+    right: 3px;
+    top: -7px;
+  }
+
+  .brand-cloud .cloud-left::before {
+    width: 70px;
+    height: 58px;
+    left: 41px;
+    top: -22px;
+  }
+
+  .hero-brand {
+    top: 36px;
+    font-size: 39px;
+    letter-spacing: -1.45px;
+  }
+
+  /* Same IMAGINE treatment, fitted to the phone viewport */
+  .hero-word {
+    top: 77%;
+    width: 100%;
+    text-align: center;
+    font-size: 96px;
+    letter-spacing: -5px;
+  }
+
+  /* Resize the complete phone internals proportionally */
+  .phone {
+    width: 170px;
+    height: 347px;
+    padding: 7px;
+    border-radius: 30px;
+  }
+
+  .phone::before {
+    width: 65px;
+    height: 16px;
+    top: 6px;
+    border-radius: 0 0 12px 12px;
+  }
+
+  .phone-screen {
+    border-radius: 25px;
+    padding: 0;
+  }
+
+  .appy-preview {
+    padding: 17px 12px 0;
+  }
+
+  .preview-site-header {
+    gap: 4px;
+  }
+
+  .preview-logo-mark {
+    width: 18px;
+    height: 18px;
+    border-radius: 5px;
+    font-size: 5px;
+  }
+
+  .preview-site-name {
+    font-size: 9.4px;
+  }
+
+  .preview-ai {
+    font-size: 12.3px;
+    margin-left: 2px;
+  }
+
+  .preview-homepage {
+    margin-top: 54px;
+  }
+
+  .preview-eyebrow {
+    font-size: 4.3px;
+    letter-spacing: .85px;
+    margin-bottom: 9px;
+  }
+
+  .preview-homepage h2 {
+    font-size: 15.9px;
+    letter-spacing: -.43px;
+  }
+
+  .preview-homepage p {
+    margin: 11px 0 12px;
+    font-size: 5.8px;
+  }
+
+  .preview-button {
+    padding: 6.5px 10px;
+    font-size: 5px;
+  }
+
+  .preview-buildings {
+    height: 33px;
+  }
+
+  .preview-buildings i {
+    width: 20px;
+    height: 21px;
+  }
+
+  .preview-buildings i:nth-child(2) { height: 29px; }
+  .preview-buildings i:nth-child(3) { height: 19px; }
+  .preview-buildings i:nth-child(4) { height: 25px; }
+  .preview-buildings i:nth-child(5) { height: 17px; }
+
+  .swipe-control {
+    bottom: 16px;
+  }
+
+  .swipe-arrow {
+    font-size: 18px;
+    margin-bottom: 4px;
+  }
+
+  .swipe-text {
+    font-size: 8.7px;
+    margin-bottom: 7px;
+  }
+
+  .swipe-bar {
+    width: 52px;
+    height: 4px;
+  }
+
+  /* Floating objects retain the desktop proportions */
+  .symbol-pin {
+    left: 7%;
+    top: 29%;
+    width: 65px;
+    height: 80px;
+  }
+
+  .pin-shape {
+    width: 52px;
+    height: 52px;
+  }
+
+  .pin-dot {
+    width: 18px;
+    height: 18px;
+    left: 17px;
+    top: 17px;
+  }
+
+  .symbol-ai {
+    right: 6%;
+    top: 29%;
+    width: 80px;
+    height: 80px;
+  }
+
+  .ai-orb {
+    width: 65px;
+    height: 65px;
+  }
+
+  .ai-orb span {
+    width: 7px;
+    height: 7px;
+  }
+
+  .ai-orb span:nth-child(1) { left: 17px; top: 30px; }
+  .ai-orb span:nth-child(2) { left: 36px; top: 18px; }
+  .ai-orb span:nth-child(3) { left: 42px; top: 41px; }
+
+  .nfc-pair {
+    left: 5%;
+    bottom: 18%;
+    width: 94px;
+    height: 94px;
+  }
+
+  .symbol-nfc,
+  .nfc-reflection {
+    width: 94px;
+    height: 94px;
+  }
+
+  .nfc-reflection {
+    top: 130%;
+  }
+
+  .nfc-core {
+    width: 13px;
+    height: 13px;
+    left: 41px;
+    top: 41px;
+  }
+
+  .nfc-wave {
+    border-width: 4px;
+  }
+
+  .wave-one {
+    width: 35px;
+    height: 35px;
+    left: 30px;
+    top: 30px;
+  }
+
+  .wave-two {
+    width: 56px;
+    height: 56px;
+    left: 19px;
+    top: 19px;
+  }
+
+  .wave-three {
+    width: 78px;
+    height: 78px;
+    left: 8px;
+    top: 8px;
+  }
+
+  .nodes-pair {
+    right: 5%;
+    bottom: 17%;
+    width: 90px;
+    height: 90px;
+  }
+
+  .symbol-nodes,
+  .nodes-reflection {
+    width: 90px;
+    height: 90px;
+  }
+
+  .nodes-reflection {
+    top: 90px;
+  }
+
+  .node {
+    width: 16px;
+    height: 16px;
+  }
+
+  .node-one { left: 7px; top: 36px; }
+  .node-two { left: 37px; top: 9px; }
+  .node-three { right: 6px; top: 40px; }
+  .node-four { left: 37px; bottom: 4px; }
+
+  .node-line {
+    width: 45px;
+    height: 3px;
+  }
+
+  .line-one { left: 17px; top: 42px; }
+  .line-two { left: 48px; top: 22px; }
+  .line-three { left: 18px; top: 48px; }
+
+  /* Reflection uses the exact same scaled phone dimensions */
+  .phone-mirror {
+    width: 170px;
+    height: 347px;
+  }
+
+  .phone-mirror .phone {
+    width: 170px;
+    height: 347px;
+  }
+
+  .hero-caption {
+    width: 100%;
+    text-align: center;
+    font-size: 10px;
+    letter-spacing: 2px;
+  }
+}
+
+  
+/* =========================================
+   MOBILE COMPOSITION REFINEMENT V2
+   Overrides mobile only. Desktop untouched.
+   ========================================= */
+@media (max-width: 600px) {
+
+  /* Bring the phone down so its base meets the 78% waterline */
+  .phone-wrap#enter-site {
+    position: absolute;
+    left: 50%;
+    top: calc(78% - 347px);
+    margin-left: -85px;
+  }
+
+  /* The cloned phone inside the reflection keeps normal positioning */
+  .phone-mirror .phone-wrap {
+    position: relative !important;
+    left: auto !important;
+    top: auto !important;
+    margin-left: 0 !important;
+  }
+
+  /* Reflection begins immediately below the waterline */
+  .phone-mirror {
+    top: 0;
+    transform:
+      translateX(-50%)
+      scaleY(-1);
+    transform-origin: top center;
+  }
+
+  /* Make IMAGINE fit the viewport rather than clip at both sides */
+  .hero-word {
+    top: 78%;
+    width: 100%;
+    font-size: 82px;
+    letter-spacing: -4px;
+    line-height: .86;
+  }
+
+  /* Slightly lower the cloud/title group */
+  .brand-cloud {
+    top: 5.5%;
+  }
+
+  .hero-brand {
+    top: 48px;
+  }
+
+  /* Keep upper symbols balanced around the lowered phone */
+  .symbol-pin {
+    left: 8%;
+    top: 31%;
+  }
+
+  .symbol-ai {
+    right: 7%;
+    top: 31%;
+  }
+
+  /* Pull lower symbols away from IMAGINE and closer to desktop balance */
+  .nfc-pair {
+    left: 7%;
+    bottom: 12%;
+  }
+
+  .nodes-pair {
+    right: 7%;
+    bottom: 11%;
+  }
+
+  /* Reposition the blue subheading beneath IMAGINE */
+  .hero-caption {
+    top: 81.5%;
+    bottom: auto;
+    width: 100%;
+    text-align: center;
+    font-size: 9px;
+    letter-spacing: 1.8px;
+  }
+
+  /* Keep the splash/impact centred on the actual mobile waterline */
+  .impact-burst,
+  .impact-splash,
+  .water-crown {
+    top: 78%;
+  }
+}
+
+
+/* =========================================
+   MOBILE COMPOSITION REFINEMENT V3
+   Raise Appy Family branding so the falling
+   phone does not visually cover the title.
+   ========================================= */
+@media (max-width: 600px) {
+  .brand-cloud {
+    top: 3.5%;
+  }
+
+  .hero-brand {
+    top: 30px;
+  }
+}
+
+
+/* =========================================
+   MOBILE COMPOSITION REFINEMENT V4
+   Lower phone further into water and raise
+   Appy Family branding slightly.
+   ========================================= */
+@media (max-width: 600px) {
+
+  /* Lower phone 24px further into the water */
+  .phone-wrap#enter-site {
+    top: calc(78% - 323px);
+  }
+
+  /* Keep reflected clone independent of the live phone positioning */
+  .phone-mirror .phone-wrap {
+    position: relative !important;
+    left: auto !important;
+    top: auto !important;
+    margin-left: 0 !important;
+  }
+
+  /* Raise branding slightly from V3 */
+  .brand-cloud {
+    top: 2.5%;
+  }
+
+  .hero-brand {
+    top: 22px;
+  }
+}
+
+
+/* =========================================
+   MOBILE COMPOSITION REFINEMENT V5
+   Use upper empty space more effectively,
+   keep branding clear of the phone, and
+   place caption cleanly beneath IMAGINE.
+   ========================================= */
+@media (max-width: 600px) {
+
+  /* Bring the entire phone composition upward while keeping
+     the bottom slightly submerged past the waterline. */
+  .phone-wrap#enter-site {
+    top: calc(78% - 385px);
+  }
+
+  /* Keep reflection clone independent from live phone positioning. */
+  .phone-mirror .phone-wrap {
+    position: relative !important;
+    left: auto !important;
+    top: auto !important;
+    margin-left: 0 !important;
+  }
+
+  /* Branding stays high and fully visible above the falling phone. */
+  .brand-cloud {
+    top: 1.8%;
+  }
+
+  .hero-brand {
+    top: 18px;
+    z-index: 60;
+  }
+
+  /* Move the upper floating symbols upward with the phone
+     so the middle of the screen feels intentionally occupied. */
+  .symbol-pin {
+    top: 27%;
+  }
+
+  .symbol-ai {
+    top: 27%;
+  }
+
+  /* IMAGINE remains anchored immediately above the waterline. */
+  .hero-word {
+    top: 78%;
+    font-size: 82px;
+    letter-spacing: -4px;
+    line-height: .86;
+  }
+
+  /* Caption sits below IMAGINE at the waterline instead of drifting. */
+  .hero-caption {
+    top: 79.6%;
+    bottom: auto;
+    width: 100%;
+    text-align: center;
+    font-size: 8.5px;
+    letter-spacing: 1.5px;
+    z-index: 20;
+  }
+}
+
+
+/* =========================================
+   DESKTOP TITLE CLEARANCE FIX V7
+   Applies only above mobile breakpoint.
+   ========================================= */
+@media (min-width: 601px) {
+  .hero-brand {
+    top: 34px;
+    z-index: 70;
+  }
+
+  .brand-cloud {
+    top: 2.5%;
+  }
+}
+
+
+/* =========================================
+   MOBILE WATERLINE FIX V8
+   Desktop V7 stays unchanged.
+   Lower only the mobile phone so its bottom
+   enters the water while preserving scale.
+   ========================================= */
+@media (max-width: 600px) {
+
+  /* Phone height is 347px. Position its bottom
+     18px below the 78% waterline. */
+  .phone-wrap#enter-site {
+    top: calc(78% - 329px);
+  }
+
+  /* Reflection clone stays anchored independently. */
+  .phone-mirror .phone-wrap {
+    position: relative !important;
+    left: auto !important;
+    top: auto !important;
+    margin-left: 0 !important;
+  }
+}
+
+
+/* =========================================
+   MOBILE COMPOSITION REFINEMENT V9
+   Desktop V7 remains unchanged.
+   ========================================= */
+@media (max-width: 600px) {
+
+  /* Lower the phone a little further into the water */
+  .phone-wrap#enter-site {
+    top: calc(78% - 317px);
+  }
+
+  .phone-mirror .phone-wrap {
+    position: relative !important;
+    left: auto !important;
+    top: auto !important;
+    margin-left: 0 !important;
+  }
+
+  /* Drop the cloud/title group down on mobile to use
+     more of the empty upper space */
+  .brand-cloud {
+    top: 5%;
+  }
+
+  .hero-brand {
+    top: 42px;
+    z-index: 70;
+  }
+}
+
+
+/* =========================================
+   MOBILE PHONE REFLECTION FIX V10
+   Desktop and V9 composition unchanged.
+   ========================================= */
+@media (max-width: 600px) {
+
+  /* Keep the reflection zone starting exactly at the waterline */
+  .reflection-zone {
+    top: 78%;
+    bottom: 0;
+    overflow: hidden;
+  }
+
+  /* The mirror itself must start at the water surface.
+     Earlier translateY(100%) pushed it below the visible water area. */
+  .phone-mirror {
+    left: 50%;
+    top: 0;
+    width: 170px;
+    height: 347px;
+
+    transform: translateX(-50%) scaleY(-1);
+    transform-origin: top center;
+
+    opacity: 0;
+    filter:
+      blur(1.5px)
+      brightness(.72)
+      saturate(.75);
+
+    animation:
+      mobilePhoneReflectionAppear 1.15s ease 1.85s forwards;
+  }
+
+  .phone-mirror .phone-wrap {
+    position: relative !important;
+    left: auto !important;
+    top: auto !important;
+    margin-left: 0 !important;
+    animation: none !important;
+    transform: none !important;
+  }
+
+  @keyframes mobilePhoneReflectionAppear {
+    0%   { opacity: 0; }
+    35%  { opacity: .08; }
+    65%  { opacity: .24; }
+    88%  { opacity: .38; }
+    100% { opacity: .44; }
+  }
+}
+
+
+/* =========================================
+   MOBILE PHONE REFLECTION FIX V11
+   Keep mirror container inside the water,
+   and flip the cloned phone inside it.
+   ========================================= */
+@media (max-width: 600px) {
+
+  .reflection-zone {
+    top: 78%;
+    bottom: 0;
+    overflow: hidden;
+  }
+
+  .phone-mirror {
+    left: 50%;
+    top: 0;
+    width: 170px;
+    height: 347px;
+
+    /* Do NOT flip the container itself:
+       that would place it above the clipped water zone. */
+    transform: translateX(-50%);
+    transform-origin: top center;
+
+    opacity: 0;
+    filter:
+      blur(1.5px)
+      brightness(.72)
+      saturate(.75);
+
+    animation:
+      mobilePhoneReflectionAppearV11 1.15s ease 1.85s forwards;
+  }
+
+  /* Flip the cloned phone INSIDE the downward-facing container. */
+  .phone-mirror .phone-wrap {
+    position: relative !important;
+    left: auto !important;
+    top: auto !important;
+    margin-left: 0 !important;
+
+    animation: none !important;
+
+    transform:
+      translateY(100%)
+      scaleY(-1) !important;
+
+    transform-origin: top center !important;
+  }
+
+  .phone-mirror .swipe-control {
+    display: none;
+  }
+
+  @keyframes mobilePhoneReflectionAppearV11 {
+    0%   { opacity: 0; }
+    35%  { opacity: .10; }
+    65%  { opacity: .28; }
+    88%  { opacity: .44; }
+    100% { opacity: .50; }
+  }
+}
+
+
+/* =========================================
+   MOBILE BRAND POSITION REFINEMENT V12
+   Only lowers the Appy Family/cloud group.
+   All other V11 behaviour remains unchanged.
+   ========================================= */
+@media (max-width: 600px) {
+  .brand-cloud {
+    top: 8%;
+  }
+
+  .hero-brand {
+    top: 68px;
+  }
+}
+
+
+/* =========================================
+   FINAL MOBILE BRAND POSITION
+   Only lowers Appy Family + cloud.
+   All V12 phone, reflection, water, swipe,
+   interaction and desktop behaviour retained.
+   ========================================= */
+@media (max-width: 600px) {
+  .brand-cloud {
+    top: 11%;
+  }
+
+  .hero-brand {
+    top: 94px;
+  }
+}
+
+
+/* =========================================
+   FINAL MOBILE CAPTION FIX
+   Keep "Technology made simple" above water.
+   Everything else remains unchanged.
+   ========================================= */
+@media (max-width: 600px) {
+  .hero-caption {
+    top: 75.8%;
+    bottom: auto;
+    width: 100%;
+    text-align: center;
+    z-index: 20;
+  }
+}
+
+
+/* =========================================
+   FINAL MOBILE CAPTION POSITION
+   Caption sits above IMAGINE, then retains
+   the existing fade-away animation.
+   ========================================= */
+@media (max-width: 600px) {
+  .hero-caption {
+    top: 70.5%;
+    bottom: auto;
+    width: 100%;
+    text-align: center;
+    font-size: 8.5px;
+    letter-spacing: 1.5px;
+    z-index: 20;
+  }
+}
+
+
+/* =========================================
+   FINAL MOBILE POLISH
+   1. More space above IMAGINE for caption.
+   2. Slower phone drop on mobile only.
+   ========================================= */
+@media (max-width: 600px) {
+
+  .hero-caption {
+    top: 68.5%;
+  }
+
+  .phone-wrap#enter-site {
+    animation-duration: 2.35s;
+  }
+}
+
+</style>
 </head>
 
 <body>
@@ -2715,6 +3418,78 @@ waterStage.addEventListener('mousemove', (event) => {
   createWaterRipple(event.clientX, event.clientY);
 });
 
+</script>
+
+
+<script>
+/* =========================================
+   MOBILE SWIPE FALLBACK
+   Adds native touch handling while leaving
+   the existing pointer swipe logic intact.
+   ========================================= */
+(function () {
+  const swipeControl = document.getElementById('swipe-control');
+  const enterSite = document.getElementById('enter-site');
+  const whiteTransition = document.getElementById('white-transition');
+
+  if (!swipeControl || !enterSite || !whiteTransition) return;
+
+  let touchStartY = 0;
+  let touchCurrentY = 0;
+  let touchActive = false;
+  let touchTriggered = false;
+
+  function enterWebsite() {
+    if (touchTriggered) return;
+    touchTriggered = true;
+
+    swipeControl.style.transform = 'translateY(-100px)';
+    enterSite.classList.add('entering');
+
+    setTimeout(function () {
+      whiteTransition.classList.add('active');
+    }, 650);
+
+    setTimeout(function () {
+      window.location.href = 'home.html';
+    }, 1350);
+  }
+
+  swipeControl.addEventListener('touchstart', function (event) {
+    if (!event.touches || !event.touches.length) return;
+    touchStartY = event.touches[0].clientY;
+    touchCurrentY = touchStartY;
+    touchActive = true;
+  }, { passive: true });
+
+  swipeControl.addEventListener('touchmove', function (event) {
+    if (!touchActive || !event.touches || !event.touches.length) return;
+
+    touchCurrentY = event.touches[0].clientY;
+    const distance = touchStartY - touchCurrentY;
+
+    if (distance > 0) {
+      event.preventDefault();
+      swipeControl.style.transform =
+        'translateY(-' + Math.min(distance, 100) + 'px)';
+    }
+  }, { passive: false });
+
+  swipeControl.addEventListener('touchend', function () {
+    if (!touchActive) return;
+
+    const distance = touchStartY - touchCurrentY;
+    touchActive = false;
+
+    if (distance > 45) {
+      enterWebsite();
+    } else {
+      swipeControl.style.transform = '';
+    }
+  }, { passive: true });
+
+  swipeControl.style.touchAction = 'none';
+})();
 </script>
 
 </body>
