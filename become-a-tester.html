@@ -1,0 +1,950 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Become a Tester | Appy Family</title>
+
+  <meta
+    name="description"
+    content="Join the Appy Family testing community and help test upcoming Android apps including Nozey before public release."
+  >
+
+  <link
+    rel="canonical"
+    href="https://appyfamily.github.io/become-a-tester.html"
+  >
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet"
+  >
+
+  <style>
+    :root {
+      --cream: #FBF7F1;
+      --cream-2: #F3EEE4;
+      --paper: #FFFFFF;
+      --ink: #182B4D;
+      --ink-soft: #4E5A72;
+      --blue: #2456CC;
+      --blue-deep: #17284F;
+      --coral: #F0654E;
+      --amber: #F5A430;
+      --sky: #E7EEFC;
+      --line: #E3DCCC;
+      --radius-lg: 28px;
+      --radius-md: 18px;
+      --shadow: 0 20px 40px -20px rgba(23, 40, 79, 0.25);
+      --container: 1180px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: "Inter", sans-serif;
+      background: var(--cream);
+      color: var(--ink);
+      line-height: 1.6;
+    }
+
+    a {
+      text-decoration: none;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    .container {
+      width: min(92%, var(--container));
+      margin: 0 auto;
+    }
+
+    /* HEADER */
+
+    header {
+      background: rgba(251, 247, 241, 0.96);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .nav {
+      min-height: 82px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 30px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      color: var(--blue-deep);
+      font-weight: 800;
+      font-size: 20px;
+    }
+
+    .brand img {
+      width: 46px;
+      height: 46px;
+      border-radius: 12px;
+      object-fit: cover;
+    }
+
+    .back-link {
+      color: var(--blue);
+      font-weight: 700;
+      transition: opacity 0.2s ease;
+    }
+
+    .back-link:hover {
+      opacity: 0.7;
+    }
+
+    /* HERO */
+
+    .hero {
+      padding: 95px 0 75px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      width: 420px;
+      height: 420px;
+      border-radius: 50%;
+      background: var(--sky);
+      top: -170px;
+      right: -100px;
+      z-index: -1;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      color: var(--blue);
+      font-size: 13px;
+      font-weight: 800;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+    }
+
+    .hero h1 {
+      max-width: 820px;
+      font-size: clamp(42px, 6vw, 76px);
+      line-height: 1.03;
+      letter-spacing: -0.045em;
+      color: var(--blue-deep);
+      margin-bottom: 26px;
+    }
+
+    .hero h1 span {
+      color: var(--blue);
+    }
+
+    .hero-copy {
+      max-width: 720px;
+      font-size: 19px;
+      color: var(--ink-soft);
+      margin-bottom: 34px;
+    }
+
+    .hero-note {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: var(--paper);
+      border: 1px solid var(--line);
+      padding: 12px 18px;
+      border-radius: 999px;
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--ink);
+    }
+
+    .hero-note span {
+      width: 9px;
+      height: 9px;
+      background: #28a745;
+      border-radius: 50%;
+      display: inline-block;
+    }
+
+    /* AVAILABLE */
+
+    .available {
+  padding: 30px 0 65px;
+    }
+
+    .section-heading {
+      margin-bottom: 36px;
+    }
+
+    .section-heading h2 {
+      font-size: clamp(30px, 4vw, 46px);
+      letter-spacing: -0.035em;
+      color: var(--blue-deep);
+      margin-bottom: 10px;
+    }
+
+    .section-heading p {
+      color: var(--ink-soft);
+      max-width: 650px;
+    }
+
+    .app-card {
+      background: var(--paper);
+      border: 1px solid var(--line);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow);
+      padding: 42px;
+      display: grid;
+      grid-template-columns: 210px 1fr;
+      gap: 48px;
+      align-items: center;
+    }
+
+    .app-image {
+      background: var(--sky);
+      border-radius: 24px;
+      padding: 24px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 210px;
+    }
+
+    .app-image img {
+  width: 100%;
+  max-width: 620px;
+  height: auto;
+  border-radius: 18px;
+}
+
+    .status {
+      display: inline-block;
+      background: #EAF7EE;
+      color: #237A3B;
+      font-size: 12px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      padding: 7px 12px;
+      border-radius: 999px;
+      margin-bottom: 16px;
+    }
+
+    .app-content h3 {
+      font-size: 36px;
+      line-height: 1.1;
+      color: var(--blue-deep);
+      margin-bottom: 14px;
+    }
+
+    .app-content p {
+      color: var(--ink-soft);
+      max-width: 670px;
+      margin-bottom: 18px;
+    }
+
+    .requirements {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin: 22px 0 28px;
+    }
+
+    .requirement {
+      background: var(--cream);
+      border: 1px solid var(--line);
+      padding: 8px 12px;
+      border-radius: 10px;
+      color: var(--ink);
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    .primary-button {
+      display: inline-block;
+      background: var(--blue);
+      color: white;
+      padding: 15px 24px;
+      border-radius: 12px;
+      font-weight: 800;
+      transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+    }
+
+    .primary-button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 24px -10px rgba(36, 86, 204, 0.5);
+    }
+
+    /* HOW IT WORKS */
+
+    .how {
+      background: var(--blue-deep);
+      color: white;
+      padding: 90px 0;
+    }
+
+    .how .eyebrow {
+      color: #9EB9FF;
+    }
+
+    .how h2 {
+      font-size: clamp(32px, 4vw, 48px);
+      letter-spacing: -0.035em;
+      margin-bottom: 50px;
+    }
+
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+    }
+
+    .step {
+      border: 1px solid rgba(255,255,255,0.15);
+      border-radius: var(--radius-md);
+      padding: 28px 24px;
+      background: rgba(255,255,255,0.04);
+    }
+
+    .step-number {
+      width: 42px;
+      height: 42px;
+      background: var(--blue);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+      margin-bottom: 22px;
+    }
+
+    .step h3 {
+      margin-bottom: 9px;
+      font-size: 18px;
+    }
+
+    .step p {
+      color: #C9D2E3;
+      font-size: 14px;
+    }
+
+    /* WHY TEST */
+
+    .why {
+      padding: 70px 0;
+    }
+
+    .why-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 65px;
+      align-items: center;
+    }
+
+    .why h2 {
+      font-size: clamp(32px, 4vw, 48px);
+      line-height: 1.1;
+      letter-spacing: -0.035em;
+      margin-bottom: 20px;
+    }
+
+    .why p {
+      color: var(--ink-soft);
+      margin-bottom: 18px;
+    }
+
+    .benefits {
+      display: grid;
+      gap: 14px;
+    }
+
+    .benefit {
+      background: var(--paper);
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 20px;
+      font-weight: 700;
+    }
+
+    .benefit strong {
+      color: var(--blue);
+      margin-right: 8px;
+    }
+
+    /* CTA */
+
+    .cta {
+      padding: 0 0 95px;
+    }
+
+    .cta-box {
+      background: var(--sky);
+      border-radius: var(--radius-lg);
+      padding: 60px;
+      text-align: center;
+    }
+
+    .cta-box h2 {
+      font-size: clamp(30px, 4vw, 44px);
+      letter-spacing: -0.035em;
+      margin-bottom: 14px;
+    }
+
+    .cta-box p {
+      color: var(--ink-soft);
+      max-width: 600px;
+      margin: 0 auto 28px;
+    }
+
+    /* FOOTER */
+
+    footer {
+      border-top: 1px solid var(--line);
+      padding: 35px 0;
+    }
+
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      align-items: center;
+      color: var(--ink-soft);
+      font-size: 13px;
+    }
+
+    .footer-inner a {
+      color: var(--blue);
+      font-weight: 700;
+    }
+
+    /* MOBILE */
+
+    @media (max-width: 800px) {
+      .hero {
+        padding: 65px 0 55px;
+      }
+
+      .app-card {
+        grid-template-columns: 1fr;
+        gap: 28px;
+        padding: 25px;
+      }
+
+      .app-image {
+        min-height: 180px;
+      }
+
+      .steps {
+       grid-template-columns: repeat(2, 1fr);
+      }
+
+      .why-grid {
+        grid-template-columns: 1fr;
+        gap: 35px;
+      }
+
+      .cta-box {
+        padding: 40px 22px;
+      }
+
+      .footer-inner {
+        flex-direction: column;
+        text-align: center;
+      }
+    }
+
+    .tester-form-wrap {
+    width: 100%;
+    max-width: 620px;
+    margin: 32px auto 0;
+    text-align: left;
+}
+
+.tester-form {
+    background: #ffffff;
+    border-radius: 24px;
+    padding: 32px;
+    box-shadow: 0 16px 40px rgba(15, 40, 90, 0.12);
+}
+
+#tester-success {
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+#tester-success h3 {
+    font-size: 32px;
+    margin-bottom: 14px;
+}
+
+#tester-success p {
+    font-size: 20px;
+    line-height: 1.6;
+    margin-bottom: 28px;
+}
+
+#tester-success .primary-button {
+    display: inline-block;
+    margin-top: 20px;
+}
+
+[hidden] {
+    display: none !important;
+}
+
+.tester-form label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 700;
+    color: #102b5c;
+}
+
+.tester-form label span {
+    font-weight: 400;
+}
+
+.tester-form input[type="text"],
+.tester-form input[type="email"] {
+    width: 100%;
+    padding: 15px 16px;
+    margin-bottom: 24px;
+    border: 1px solid #ccd5e3;
+    border-radius: 12px;
+    font: inherit;
+    color: #102b5c;
+    background: #ffffff;
+}
+
+.tester-form input:focus {
+    outline: 2px solid #2860db;
+    outline-offset: 2px;
+}
+
+.tester-form .tester-consent {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    margin: 4px 0 26px;
+    font-weight: 400;
+    line-height: 1.5;
+}
+
+.tester-consent input {
+    width: 20px;
+    height: 20px;
+    margin-top: 2px;
+    flex: 0 0 auto;
+    accent-color: #2860db;
+}
+
+.tester-form .primary-button {
+    width: 100%;
+    cursor: pointer;
+}
+
+    @media (max-width: 520px) {
+
+      .steps {
+       grid-template-columns: 1fr;
+      }
+
+      .nav {
+        min-height: 70px;
+      }
+
+      .brand {
+        font-size: 17px;
+      }
+
+      .brand img {
+        width: 40px;
+        height: 40px;
+      }
+
+      .back-link {
+        font-size: 13px;
+      }
+
+      .hero {
+  padding-bottom: 55px;
+}
+
+      .hero h1 {
+        font-size: 44px;
+      }
+
+      .hero-copy {
+        font-size: 17px;
+      }
+
+      .app-content h3 {
+        font-size: 30px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <div class="container nav">
+      <a href="home.html" class="brand">
+        <img src="assets/appy-family-logo.jpg" alt="Appy Family logo">
+        <span>Appy Family</span>
+      </a>
+
+      <a href="home.html" class="back-link">← Back to Appy Family</a>
+    </div>
+  </header>
+
+  <main>
+
+    <section class="hero">
+      <div class="container">
+
+        <span class="eyebrow">Appy Family Testing Community</span>
+
+        <h1>
+          Help us build<br>
+          <span>better apps.</span>
+        </h1>
+
+        <p class="hero-copy">
+          Join the Appy Family testing community and get early access
+          to apps we're preparing for release. Try them, explore the
+          features and tell us what works — and what doesn't.
+        </p>
+
+        <div class="hero-note">
+          <span></span>
+          Nozey is currently recruiting Android testers
+        </div>
+
+      </div>
+    </section>
+
+    <section class="available">
+      <div class="container">
+
+        <div class="section-heading">
+          <span class="eyebrow">Available now</span>
+          <h2>Apps currently in testing</h2>
+          <p>
+            Choose an app below to join its testing programme.
+            More Appy Family products will be added here as they
+            become ready for testing.
+          </p>
+        </div>
+
+        <article class="app-card">
+
+          <div class="app-image">
+            <img
+              src="assets/nozey-preview.png"
+              alt="Nozey app"
+            >
+          </div>
+
+          <div class="app-content">
+
+            <span class="status">Closed testing — Android</span>
+
+            <h3>Nozey</h3>
+
+            <p>
+              Nozey helps people explore publicly available UK crime
+              information around a postcode, town or their current
+              location through an easy-to-use interactive map.
+            </p>
+
+            <p>
+              We're currently looking for Android users to test Nozey
+              before its wider Google Play release. You don't need to
+              be technical — we want feedback from everyday users.
+            </p>
+
+            <div class="requirements">
+              <span class="requirement">Android device</span>
+              <span class="requirement">Google Play account</span>
+              <span class="requirement">Free to join</span>
+              <span class="requirement">UK crime data</span>
+            </div>
+
+            <a
+              class="primary-button"
+              href="#tester-signup"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Apply to Test Nozey →
+            </a>
+
+          </div>
+
+        </article>
+
+      </div>
+    </section>
+
+    <section class="how">
+      <div class="container">
+
+        <span class="eyebrow">Simple process</span>
+
+        <h2>How testing works</h2>
+
+        <div class="steps">
+
+          <div class="step">
+            <div class="step-number">1</div>
+            <h3>Apply</h3>
+            <p>
+              Complete our short tester form using the Google account
+              connected to Google Play on your Android device.
+            </p>
+          </div>
+
+          <div class="step">
+            <div class="step-number">2</div>
+            <h3>Get access</h3>
+            <p>
+              We'll add your Google account to the approved Nozey
+              closed-testing group.
+            </p>
+          </div>
+
+          <div class="step">
+            <div class="step-number">3</div>
+            <h3>Install & test</h3>
+            <p>
+              Opt into the test through Google Play, install Nozey
+              and explore the app on your Android phone.
+            </p>
+          </div>
+
+          <div class="step">
+            <div class="step-number">4</div>
+            <h3>Tell us what you think</h3>
+            <p>
+              Share your experience and let us know about anything
+              confusing, useful or that could be improved.
+            </p>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <section class="why">
+      <div class="container why-grid">
+
+        <div>
+          <span class="eyebrow">Why become a tester?</span>
+
+          <h2>
+            Your feedback helps shape what we release.
+          </h2>
+
+          <p>
+            We're building Appy Family products for real people,
+            which means real-world testing matters.
+          </p>
+
+          <p>
+            You don't need software-development experience. In fact,
+            seeing how someone encounters an app for the first time
+            can be some of the most useful feedback we receive.
+          </p>
+        </div>
+
+        <div class="benefits">
+
+          <div class="benefit">
+            <strong>01</strong>
+            Get early access to Appy Family products
+          </div>
+
+          <div class="benefit">
+            <strong>02</strong>
+            Help identify problems before public release
+          </div>
+
+          <div class="benefit">
+            <strong>03</strong>
+            Influence improvements through real feedback
+          </div>
+
+          <div class="benefit">
+            <strong>04</strong>
+            Be part of the Appy Family testing community
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <section class="cta" id="tester-signup">
+      <div class="container">
+
+        <div class="cta-box">
+
+          <span class="eyebrow">Nozey needs testers</span>
+
+          <h2 id="tester-cta-title">Ready to give Nozey a try?</h2>
+
+<p id="tester-cta-text">
+    It only takes a minute to register your interest. Once approved, we'll send you
+    the information you need to join the closed test through Google Play.
+</p>
+
+          <button type="button" class="primary-button" id="open-tester-form">
+            Become a Nozey Tester →
+          </button>
+
+          <div class="tester-form-wrap" id="tester-form-wrap" hidden>
+
+    <form
+        class="tester-form"
+        action="https://docs.google.com/forms/d/e/1FAIpQLSde2C016L6dTKsZe28uf2l23bs7AtGHl-Jz4-hEf7jUL4Da-Q/formResponse"
+        method="POST"
+        target="tester-form-response"
+    >
+
+        <label for="tester-name">Full Name <span>(optional)</span></label>
+        <input
+            type="text"
+            id="tester-name"
+            name="entry.1572541323"
+            autocomplete="name"
+        >
+
+        <label for="tester-email">Google Email Address</label>
+        <input
+            type="email"
+            id="tester-email"
+            name="entry.2144668396"
+            autocomplete="email"
+            required
+        >
+
+        <label class="tester-consent">
+            <input
+                type="checkbox"
+                name="entry.1121626446"
+                value="I agree to take part in Nozey's closed test and receive emails relating to testing access, instructions and feedback."
+                required
+            >
+            <span>
+                I agree to take part in Nozey's closed test and receive emails relating
+                to testing access, instructions and feedback.
+            </span>
+        </label>
+
+        <button type="submit" class="primary-button">
+            Join the Nozey Test →
+        </button>
+
+    </form>
+
+<div id="tester-success" hidden>
+  <h3>You're in! 🎉</h3>
+  <p>
+    Thanks for registering to test Nozey. We'll email you with the next steps.
+  </p>
+
+  <a href="home.html" class="primary-button">
+    Back to Appy Family →
+  </a>
+</div>
+
+    <iframe
+        name="tester-form-response"
+        title="Nozey tester form response"
+        hidden
+    ></iframe>
+
+</div>
+
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="container footer-inner">
+
+      <span>© 2026 Appy Family. Building practical technology for everyday life.</span>
+
+      <div>
+        <a href="home.html">Home</a>
+        &nbsp;&nbsp;·&nbsp;&nbsp;
+        <a href="privacy.html">Privacy</a>
+      </div>
+
+    </div>
+  </footer>
+
+  <script>
+    const openTesterFormButton = document.getElementById("open-tester-form");
+const testerFormWrap = document.getElementById("tester-form-wrap");
+const testerForm = document.querySelector(".tester-form");
+const testerSuccess = document.getElementById("tester-success");
+const testerCtaTitle = document.getElementById("tester-cta-title");
+const testerCtaText = document.getElementById("tester-cta-text");
+
+openTesterFormButton.addEventListener("click", () => {
+    testerFormWrap.hidden = false;
+    openTesterFormButton.hidden = true;
+
+    testerFormWrap.scrollIntoView({
+        behavior: "smooth",
+        block: "center"
+    });
+});
+
+testerForm.addEventListener("submit", () => {
+    setTimeout(() => {
+        testerForm.hidden = true;
+openTesterFormButton.hidden = true;
+testerCtaTitle.hidden = true;
+testerCtaText.hidden = true;
+testerSuccess.hidden = false;
+
+        testerSuccess.scrollIntoView({
+            behavior: "smooth",
+            block: "center"
+        });
+    }, 800);
+});
+</script>
+
+</body>
+</html>
