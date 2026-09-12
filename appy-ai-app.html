@@ -1,0 +1,1350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Appy AI — Your Business, Working Smarter</title>
+
+<style>
+
+:root{
+  --ink:#17233c;
+  --muted:#6d7890;
+  --blue:#536cff;
+  --purple:#8b67f6;
+  --aqua:#5fcbd3;
+  --green:#35b98b;
+
+  --bg:#f7f8fd;
+  --white:rgba(255,255,255,.82);
+  --line:rgba(31,49,85,.09);
+
+  --shadow:0 24px 70px rgba(46,61,110,.10);
+}
+
+*{
+  box-sizing:border-box;
+}
+
+html,
+body{
+  margin:0;
+  min-height:100%;
+}
+
+body{
+  font-family:
+    Inter,
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+
+  color:var(--ink);
+
+  background:
+    radial-gradient(
+      circle at 78% 5%,
+      rgba(139,103,246,.13),
+      transparent 30%
+    ),
+    radial-gradient(
+      circle at 35% 20%,
+      rgba(95,203,211,.10),
+      transparent 26%
+    ),
+    #f8f9fd;
+}
+
+
+/* =========================
+   LAYOUT
+========================= */
+
+.app{
+  min-height:100vh;
+
+  display:grid;
+  grid-template-columns:210px 1fr;
+}
+
+
+/* =========================
+   SIDEBAR
+========================= */
+
+.sidebar{
+  position:relative;
+
+  padding:28px 16px 22px;
+
+  display:flex;
+  flex-direction:column;
+
+  border-right:1px solid var(--line);
+
+  background:
+    rgba(255,255,255,.58);
+
+  backdrop-filter:blur(25px);
+}
+
+.brand{
+  display:flex;
+  align-items:center;
+  gap:10px;
+
+  padding:0 9px;
+
+  margin-bottom:42px;
+}
+
+.brand-mark{
+  width:34px;
+  height:34px;
+
+  display:grid;
+  place-items:center;
+
+  border-radius:11px;
+
+  color:white;
+
+  font-weight:800;
+  font-size:.86rem;
+
+  background:
+    linear-gradient(
+      135deg,
+      var(--blue),
+      var(--purple)
+    );
+
+  box-shadow:
+    0 8px 22px rgba(83,108,255,.25);
+}
+
+.brand-name{
+  font-size:1.08rem;
+  font-weight:800;
+
+  letter-spacing:-.035em;
+}
+
+.brand-name span{
+  color:var(--blue);
+}
+
+
+.nav-title{
+  padding:0 10px;
+  margin-bottom:8px;
+
+  color:#a0a7b6;
+
+  font-size:.63rem;
+  font-weight:800;
+
+  letter-spacing:.13em;
+}
+
+.nav{
+  display:grid;
+  gap:4px;
+}
+
+.nav-item{
+  min-height:43px;
+
+  display:flex;
+  align-items:center;
+  gap:11px;
+
+  padding:0 11px;
+
+  border-radius:12px;
+
+  color:#727d91;
+
+  text-decoration:none;
+
+  font-size:.84rem;
+  font-weight:650;
+
+  transition:.18s ease;
+}
+
+.nav-icon{
+  width:20px;
+
+  text-align:center;
+
+  color:#8792a7;
+}
+
+.nav-item:hover{
+  background:rgba(83,108,255,.055);
+  color:var(--ink);
+}
+
+.nav-item.active{
+  color:var(--blue);
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(83,108,255,.10),
+      rgba(139,103,246,.055)
+    );
+}
+
+.nav-item.active .nav-icon{
+  color:var(--blue);
+}
+
+.sidebar-bottom{
+  margin-top:auto;
+}
+
+
+/* =========================
+   MAIN
+========================= */
+
+.main{
+  min-width:0;
+
+  padding:25px 38px 50px;
+}
+
+
+/* =========================
+   TOPBAR
+========================= */
+
+.topbar{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+
+.workspace{
+  color:#929bad;
+
+  font-size:.75rem;
+  font-weight:600;
+}
+
+.workspace strong{
+  color:#59657c;
+}
+
+.top-right{
+  display:flex;
+  align-items:center;
+  gap:10px;
+}
+
+.demo-badge{
+  padding:6px 10px;
+
+  border-radius:999px;
+
+  background:rgba(83,108,255,.07);
+
+  color:var(--blue);
+
+  font-size:.65rem;
+  font-weight:800;
+
+  letter-spacing:.04em;
+}
+
+.avatar{
+  width:36px;
+  height:36px;
+
+  display:grid;
+  place-items:center;
+
+  border-radius:50%;
+
+  background:white;
+
+  border:1px solid var(--line);
+
+  box-shadow:
+    0 6px 20px rgba(31,49,85,.06);
+
+  color:#536077;
+
+  font-size:.7rem;
+  font-weight:800;
+}
+
+
+/* =========================
+   AI HERO
+========================= */
+
+.assistant{
+  max-width:900px;
+
+  margin:65px auto 58px;
+
+  text-align:center;
+}
+
+
+/* AI ORB */
+
+.ai-orb-wrap{
+  position:relative;
+
+  width:92px;
+  height:92px;
+
+  margin:0 auto 24px;
+}
+
+.ai-orb-glow{
+  position:absolute;
+
+  inset:-17px;
+
+  border-radius:50%;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(98,118,255,.23),
+      rgba(139,103,246,.08) 45%,
+      transparent 70%
+    );
+
+  animation:breathe 3.5s ease-in-out infinite;
+}
+
+.ai-orb{
+  position:absolute;
+
+  inset:0;
+
+  border-radius:50%;
+
+  overflow:hidden;
+
+  background:
+    radial-gradient(
+      circle at 32% 28%,
+      #ffffff 0%,
+      #cbd2ff 13%,
+      #8292ff 34%,
+      #8469ec 58%,
+      #59c8d0 100%
+    );
+
+  box-shadow:
+    inset -12px -14px 25px rgba(61,61,150,.15),
+    inset 10px 10px 25px rgba(255,255,255,.55),
+    0 16px 40px rgba(83,108,255,.20);
+
+  animation:float 4s ease-in-out infinite;
+}
+
+.ai-orb::after{
+  content:"";
+
+  position:absolute;
+
+  width:46px;
+  height:46px;
+
+  left:10px;
+  top:8px;
+
+  border-radius:50%;
+
+  background:
+    rgba(255,255,255,.33);
+
+  filter:blur(9px);
+}
+
+@keyframes breathe{
+  0%,100%{
+    transform:scale(.93);
+    opacity:.65;
+  }
+
+  50%{
+    transform:scale(1.08);
+    opacity:1;
+  }
+}
+
+@keyframes float{
+  0%,100%{
+    transform:translateY(0);
+  }
+
+  50%{
+    transform:translateY(-5px);
+  }
+}
+
+
+/* HERO TEXT */
+
+.online{
+  display:inline-flex;
+  align-items:center;
+  gap:7px;
+
+  margin-bottom:13px;
+
+  color:#8892a5;
+
+  font-size:.68rem;
+  font-weight:750;
+}
+
+.online-dot{
+  width:6px;
+  height:6px;
+
+  border-radius:50%;
+
+  background:var(--green);
+
+  box-shadow:
+    0 0 9px rgba(53,185,139,.45);
+}
+
+.assistant h1{
+  margin:0;
+
+  font-size:
+    clamp(2.6rem,5.4vw,5rem);
+
+  line-height:.98;
+
+  letter-spacing:-.065em;
+
+  font-weight:680;
+}
+
+.ai-gradient{
+  background:
+    linear-gradient(
+      90deg,
+      #4f67e8,
+      #8c65e9,
+      #45aebd
+    );
+
+  -webkit-background-clip:text;
+  background-clip:text;
+
+  color:transparent;
+}
+
+.subtitle{
+  max-width:570px;
+
+  margin:18px auto 30px;
+
+  color:var(--muted);
+
+  font-size:.97rem;
+}
+
+
+/* =========================
+   COMMAND
+========================= */
+
+.command{
+  max-width:760px;
+
+  margin:auto;
+
+  padding:8px;
+
+  display:flex;
+  align-items:center;
+  gap:6px;
+
+  background:
+    rgba(255,255,255,.88);
+
+  border:
+    1px solid rgba(69,87,130,.11);
+
+  border-radius:20px;
+
+  box-shadow:
+    0 22px 60px rgba(43,60,108,.11),
+    0 0 50px rgba(94,112,255,.045);
+
+  backdrop-filter:blur(20px);
+}
+
+.command input{
+  flex:1;
+
+  min-width:0;
+
+  padding:15px 14px;
+
+  border:0;
+  outline:0;
+
+  background:transparent;
+
+  color:var(--ink);
+
+  font-size:.95rem;
+}
+
+.command input::placeholder{
+  color:#9ca4b5;
+}
+
+.voice-button,
+.send-button{
+  width:44px;
+  height:44px;
+
+  flex:0 0 auto;
+
+  display:grid;
+  place-items:center;
+
+  border:0;
+  border-radius:13px;
+
+  cursor:pointer;
+}
+
+.voice-button{
+  background:#f4f5fa;
+
+  color:#768198;
+
+  font-size:1rem;
+}
+
+.send-button{
+  color:white;
+
+  background:
+    linear-gradient(
+      135deg,
+      #6076ff,
+      #8067ec
+    );
+
+  box-shadow:
+    0 7px 20px rgba(94,110,239,.23);
+
+  font-size:1rem;
+}
+
+
+/* =========================
+   SUGGESTIONS
+========================= */
+
+.suggestions{
+  display:flex;
+  justify-content:center;
+  flex-wrap:wrap;
+
+  gap:8px;
+
+  margin-top:15px;
+}
+
+.suggestion{
+  padding:8px 12px;
+
+  border:1px solid rgba(31,49,85,.075);
+
+  border-radius:999px;
+
+  background:
+    rgba(255,255,255,.53);
+
+  color:#7d8799;
+
+  font-size:.7rem;
+
+  cursor:pointer;
+
+  transition:.18s;
+}
+
+.suggestion:hover{
+  background:white;
+
+  color:var(--blue);
+
+  transform:translateY(-1px);
+
+  box-shadow:
+    0 8px 20px rgba(31,49,85,.06);
+}
+
+
+/* =========================
+   BUSINESS OVERVIEW
+========================= */
+
+.business{
+  max-width:1040px;
+
+  margin:auto;
+}
+
+.business-heading{
+  display:flex;
+  justify-content:space-between;
+  align-items:flex-end;
+
+  margin-bottom:14px;
+}
+
+.business-heading h2{
+  margin:0;
+
+  font-size:.76rem;
+
+  letter-spacing:.1em;
+
+  color:#7e899d;
+}
+
+.business-heading span{
+  color:#a0a8b7;
+
+  font-size:.68rem;
+}
+
+
+/* =========================
+   CARDS
+========================= */
+
+.cards{
+  display:grid;
+
+  grid-template-columns:
+    repeat(4,1fr);
+
+  gap:12px;
+}
+
+.card{
+  min-height:142px;
+
+  padding:18px;
+
+  border:
+    1px solid rgba(31,49,85,.075);
+
+  border-radius:18px;
+
+  background:
+    rgba(255,255,255,.68);
+
+  box-shadow:
+    0 12px 35px rgba(42,56,96,.045);
+
+  backdrop-filter:blur(15px);
+
+  transition:.2s ease;
+}
+
+.card:hover{
+  transform:translateY(-3px);
+
+  background:
+    rgba(255,255,255,.92);
+
+  box-shadow:
+    0 18px 45px rgba(42,56,96,.08);
+}
+
+.card-top{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+}
+
+.card-icon{
+  width:33px;
+  height:33px;
+
+  display:grid;
+  place-items:center;
+
+  border-radius:10px;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(83,108,255,.11),
+      rgba(139,103,246,.07)
+    );
+
+  color:#6373d9;
+
+  font-size:.88rem;
+}
+
+.card-status{
+  color:var(--green);
+
+  font-size:.65rem;
+  font-weight:750;
+}
+
+.card-number{
+  margin-top:18px;
+
+  font-size:1.75rem;
+  font-weight:720;
+
+  letter-spacing:-.04em;
+}
+
+.card-label{
+  margin-top:3px;
+
+  color:#8790a1;
+
+  font-size:.73rem;
+}
+
+
+/* =========================
+   AI ACTIVITY
+========================= */
+
+.ai-activity{
+  max-width:1040px;
+
+  margin:12px auto 0;
+
+  padding:14px 16px;
+
+  display:flex;
+  align-items:center;
+  gap:12px;
+
+  border:
+    1px solid rgba(31,49,85,.075);
+
+  border-radius:15px;
+
+  background:
+    rgba(255,255,255,.52);
+}
+
+.activity-icon{
+  width:34px;
+  height:34px;
+
+  flex:0 0 auto;
+
+  display:grid;
+  place-items:center;
+
+  border-radius:10px;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(83,108,255,.12),
+      rgba(139,103,246,.09)
+    );
+
+  color:#6877db;
+
+  font-size:.85rem;
+}
+
+.activity-copy{
+  flex:1;
+}
+
+.activity-title{
+  color:#59657b;
+
+  font-size:.73rem;
+  font-weight:750;
+}
+
+.activity-text{
+  margin-top:2px;
+
+  color:#939bad;
+
+  font-size:.68rem;
+}
+
+.activity-time{
+  color:#a3aab8;
+
+  font-size:.64rem;
+}
+
+
+/* =========================
+   MOBILE HEADER
+========================= */
+
+.mobile-header{
+  display:none;
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-width:800px){
+
+  .app{
+    display:block;
+  }
+
+  .sidebar{
+    display:none;
+  }
+
+  .main{
+    padding:
+      18px 15px 34px;
+  }
+
+  .topbar{
+    display:none;
+  }
+
+  .mobile-header{
+    display:flex;
+
+    align-items:center;
+    justify-content:space-between;
+  }
+
+  .mobile-header .brand{
+    margin:0;
+    padding:0;
+  }
+
+  .assistant{
+    margin:
+      68px auto 52px;
+  }
+
+  .ai-orb-wrap{
+    width:80px;
+    height:80px;
+  }
+
+  .assistant h1{
+    font-size:
+      clamp(2.65rem,13vw,4rem);
+  }
+
+  .cards{
+    grid-template-columns:
+      repeat(2,1fr);
+  }
+
+}
+
+
+@media(max-width:480px){
+
+  .assistant{
+    margin-top:58px;
+  }
+
+  .command{
+    border-radius:17px;
+  }
+
+  .suggestions{
+    justify-content:flex-start;
+  }
+
+  .cards{
+    grid-template-columns:1fr;
+  }
+
+  .ai-activity{
+    align-items:flex-start;
+  }
+
+  .activity-time{
+    display:none;
+  }
+
+}
+
+</style>
+</head>
+
+
+<body>
+
+<div class="app">
+
+
+<!-- ======================
+     SIDEBAR
+====================== -->
+
+<aside class="sidebar">
+
+  <div class="brand">
+
+    <div class="brand-mark">
+      A
+    </div>
+
+    <div class="brand-name">
+      Appy <span>AI</span>
+    </div>
+
+  </div>
+
+
+  <div class="nav-title">
+    WORKSPACE
+  </div>
+
+
+  <nav class="nav">
+
+    <a class="nav-item active" href="#">
+      <span class="nav-icon">⌂</span>
+      Home
+    </a>
+
+    <a class="nav-item" href="#">
+      <span class="nav-icon">◌</span>
+      Enquiries
+    </a>
+
+    <a class="nav-item" href="#">
+      <span class="nav-icon">◎</span>
+      Leads
+    </a>
+
+    <a class="nav-item" href="#">
+      <span class="nav-icon">□</span>
+      Calendar
+    </a>
+
+    <a class="nav-item" href="#">
+      <span class="nav-icon">✉</span>
+      Messages
+    </a>
+
+    <a class="nav-item" href="#">
+      <span class="nav-icon">✦</span>
+      Content
+    </a>
+
+  </nav>
+
+
+  <div
+    class="nav-title"
+    style="margin-top:27px"
+  >
+    YOUR AI
+  </div>
+
+
+  <nav class="nav">
+
+    <a class="nav-item" href="#">
+      <span class="nav-icon">⚡</span>
+      Automations
+    </a>
+
+    <a class="nav-item" href="#">
+      <span class="nav-icon">＋</span>
+      Connections
+    </a>
+
+  </nav>
+
+
+  <div class="sidebar-bottom">
+
+    <a class="nav-item" href="#">
+      <span class="nav-icon">⚙</span>
+      Settings
+    </a>
+
+  </div>
+
+</aside>
+
+
+
+<!-- ======================
+     MAIN
+====================== -->
+
+<main class="main">
+
+
+<!-- MOBILE -->
+
+<header class="mobile-header">
+
+  <div class="brand">
+
+    <div class="brand-mark">
+      A
+    </div>
+
+    <div class="brand-name">
+      Appy <span>AI</span>
+    </div>
+
+  </div>
+
+  <div class="avatar">
+    AF
+  </div>
+
+</header>
+
+
+
+<!-- TOPBAR -->
+
+<header class="topbar">
+
+  <div class="workspace">
+    Appy AI&nbsp;&nbsp;·&nbsp;&nbsp;
+    <strong>Appy Family workspace</strong>
+  </div>
+
+
+  <div class="top-right">
+
+    <span class="demo-badge">
+      LIVE PROTOTYPE
+    </span>
+
+    <div class="avatar">
+      AF
+    </div>
+
+  </div>
+
+</header>
+
+
+
+<!-- ======================
+     ASSISTANT
+====================== -->
+
+<section class="assistant">
+
+
+  <div class="ai-orb-wrap">
+
+    <div class="ai-orb-glow"></div>
+
+    <div class="ai-orb"></div>
+
+  </div>
+
+
+  <div class="online">
+
+    <span class="online-dot"></span>
+
+    READY WHEN YOU ARE
+
+  </div>
+
+
+  <h1>
+
+    What can we
+    <span class="ai-gradient">
+      get done?
+    </span>
+
+  </h1>
+
+
+  <p class="subtitle">
+
+    One place to ask, organise and automate
+    the everyday work behind your business.
+
+  </p>
+
+
+
+  <!-- COMMAND -->
+
+  <div class="command">
+
+    <input
+      id="commandInput"
+      type="text"
+      placeholder="Tell Appy AI what you need..."
+    >
+
+    <button
+      class="voice-button"
+      aria-label="Speak to Appy AI"
+    >
+      ◉
+    </button>
+
+    <button
+      class="send-button"
+      aria-label="Send request"
+    >
+      ↑
+    </button>
+
+  </div>
+
+
+
+  <!-- SUGGESTIONS -->
+
+  <div class="suggestions">
+
+    <button class="suggestion">
+      Show me new enquiries
+    </button>
+
+    <button class="suggestion">
+      What's happening today?
+    </button>
+
+    <button class="suggestion">
+      Draft a social post
+    </button>
+
+  </div>
+
+</section>
+
+
+
+<!-- ======================
+     BUSINESS
+====================== -->
+
+<section class="business">
+
+
+  <div class="business-heading">
+
+    <h2>
+      YOUR BUSINESS TODAY
+    </h2>
+
+    <span>
+      Updated just now
+    </span>
+
+  </div>
+
+
+
+  <div class="cards">
+
+
+    <article class="card">
+
+      <div class="card-top">
+
+        <div class="card-icon">
+          ◌
+        </div>
+
+        <span class="card-status">
+          +3 today
+        </span>
+
+      </div>
+
+      <div class="card-number">
+        12
+      </div>
+
+      <div class="card-label">
+        Open enquiries
+      </div>
+
+    </article>
+
+
+
+    <article class="card">
+
+      <div class="card-top">
+
+        <div class="card-icon">
+          ◎
+        </div>
+
+        <span class="card-status">
+          +2 new
+        </span>
+
+      </div>
+
+      <div class="card-number">
+        5
+      </div>
+
+      <div class="card-label">
+        Active leads
+      </div>
+
+    </article>
+
+
+
+    <article class="card">
+
+      <div class="card-top">
+
+        <div class="card-icon">
+          □
+        </div>
+
+      </div>
+
+      <div class="card-number">
+        3
+      </div>
+
+      <div class="card-label">
+        Meetings today
+      </div>
+
+    </article>
+
+
+
+    <article class="card">
+
+      <div class="card-top">
+
+        <div class="card-icon">
+          ✦
+        </div>
+
+        <span class="card-status">
+          Working
+        </span>
+
+      </div>
+
+      <div class="card-number">
+        18
+      </div>
+
+      <div class="card-label">
+        Tasks handled by AI
+      </div>
+
+    </article>
+
+
+  </div>
+
+</section>
+
+
+
+<!-- ======================
+     ACTIVITY
+====================== -->
+
+<div class="ai-activity">
+
+  <div class="activity-icon">
+    ✦
+  </div>
+
+  <div class="activity-copy">
+
+    <div class="activity-title">
+      Appy AI handled something for you
+    </div>
+
+    <div class="activity-text">
+      A new website enquiry has been
+      organised and is ready for review.
+    </div>
+
+  </div>
+
+  <div class="activity-time">
+    Just now
+  </div>
+
+</div>
+
+
+</main>
+
+</div>
+
+
+<script>
+
+/*
+  Prototype interaction only.
+  No AI service is connected yet.
+*/
+
+const input =
+  document.getElementById("commandInput");
+
+const suggestions =
+  document.querySelectorAll(".suggestion");
+
+
+suggestions.forEach(button => {
+
+  button.addEventListener("click", () => {
+
+    input.value =
+      button.textContent.trim();
+
+    input.focus();
+
+  });
+
+});
+
+</script>
+
+</body>
+</html>
